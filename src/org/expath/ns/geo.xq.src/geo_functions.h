@@ -17,7 +17,10 @@
 #ifndef ZORBA_GEOMODULE_GEOFUNCTION_H
 #define ZORBA_GEOMODULE_GEOFUNCTION_H
 
-#include <zorba/external_function.h>
+
+#include <zorba/external_module.h>
+#include <zorba/nonepure_stateless_function.h>
+#include <zorba/zorbastring.h>
 
 namespace geos{
 namespace geom{
