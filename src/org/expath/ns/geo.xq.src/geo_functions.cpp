@@ -54,6 +54,7 @@
 #include <zorba/singleton_item_sequence.h>
 #include <zorba/vector_item_sequence.h>
 #include <zorba/empty_sequence.h>
+#include <zorba/user_exception.h>
 
 #include "geo_module.h"
 
@@ -95,7 +96,7 @@ GeoFunction::throwError(
     String errName(err_localname);
     Item errQName = GeoModule::getItemFactory()->createQName(errNS, errName);
     String errDescription(aErrorMessage);
-    ExternalFunctionData::error(errQName, errDescription);
+    USER_EXCEPTION(errQName, errDescription);
 }
 
 enum GeoFunction::gmlsf_types GeoFunction::getGmlSFGeometricType(Item item) const
