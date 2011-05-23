@@ -48,160 +48,160 @@ GeoModule::getExternalFunction(const String& aLocalname)
     if (1 == 0) {
 
     }
-    else if (aLocalname.equals("dimension")) {
+    else if (aLocalname == "dimension") {
       lFunc = new SFDimensionFunction(this);
     }
-    else if (aLocalname.equals("coordinate-dimension")) {
+    else if (aLocalname == "coordinate-dimension") {
       lFunc = new SFCoordinateDimensionFunction(this);
     }
-    else if (aLocalname.equals("geometry-type")) {
+    else if (aLocalname == "geometry-type") {
       lFunc = new SFGeometryTypeFunction(this);
     }
-    else if (aLocalname.equals("srid")) {
+    else if (aLocalname == "srid") {
       lFunc = new SFSridFunction(this);
     }
-    else if (aLocalname.equals("num-geometries")) {
+    else if (aLocalname == "num-geometries") {
       lFunc = new SFNumGeometriesFunction(this);
     }
-    else if (aLocalname.equals("geometry-n")) {
+    else if (aLocalname == "geometry-n") {
       lFunc = new SFGeometryNFunction(this);
     }
-    else if (aLocalname.equals("envelope")) {
+    else if (aLocalname == "envelope") {
       lFunc = new SFEnvelopeFunction(this);
     }
-    else if (aLocalname.equals("as-text")) {
+    else if (aLocalname == "as-text") {
       lFunc = new SFAsTextFunction(this);
     }
-    else if (aLocalname.equals("as-binary")) {
+    else if (aLocalname == "as-binary") {
       lFunc = new SFAsBinaryFunction(this);
     }
-    else if (aLocalname.equals("is-empty")) {
+    else if (aLocalname == "is-empty") {
       lFunc = new SFIsEmptyFunction(this);
     }
-    else if (aLocalname.equals("is-simple")) {
+    else if (aLocalname == "is-simple") {
       lFunc = new SFIsSimpleFunction(this);
     }
-    else if (aLocalname.equals("is-3d")) {
+    else if (aLocalname == "is-3d") {
       lFunc = new SFIs3DFunction(this);
     }
-    else if (aLocalname.equals("is-measured")) {
+    else if (aLocalname == "is-measured") {
       lFunc = new SFIsMeasuredFunction(this);
     }
-    else if (aLocalname.equals("boundary")) {
+    else if (aLocalname == "boundary") {
       lFunc = new SFBoundaryFunction(this);
     }
-    else if (aLocalname.equals("equals")) {
+    else if (aLocalname == "equals") {
       lFunc = new SFEqualsFunction(this);
     }
-    else if (aLocalname.equals("covers")) {
+    else if (aLocalname == "covers") {
       lFunc = new SFCoversFunction(this);
     }
-    else if (aLocalname.equals("disjoint")) {
+    else if (aLocalname == "disjoint") {
       lFunc = new SFDisjointFunction(this);
     }
-    else if (aLocalname.equals("intersects")) {
+    else if (aLocalname == "intersects") {
       lFunc = new SFIntersectsFunction(this);
     }
-    else if (aLocalname.equals("touches")) {
+    else if (aLocalname == "touches") {
       lFunc = new SFTouchesFunction(this);
     }
-    else if (aLocalname.equals("crosses")) {
+    else if (aLocalname == "crosses") {
       lFunc = new SFCrossesFunction(this);
     }
-    else if (aLocalname.equals("within")) {
+    else if (aLocalname == "within") {
       lFunc = new SFWithinFunction(this);
     }
-    else if (aLocalname.equals("contains")) {
+    else if (aLocalname == "contains") {
       lFunc = new SFContainsFunction(this);
     }
-    else if (aLocalname.equals("overlaps")) {
+    else if (aLocalname == "overlaps") {
       lFunc = new SFOverlapsFunction(this);
     }
-    else if (aLocalname.equals("relate")) {
+    else if (aLocalname == "relate") {
       lFunc = new SFRelateFunction(this);
     }
-    else if (aLocalname.equals("distance")) {
+    else if (aLocalname == "distance") {
       lFunc = new SFDistanceFunction(this);
     }
-    else if (aLocalname.equals("buffer")) {
+    else if (aLocalname == "buffer") {
       lFunc = new SFBufferFunction(this);
     }
-    else if (aLocalname.equals("convex-hull")) {
+    else if (aLocalname == "convex-hull") {
       lFunc = new SFConvexHullFunction(this);
     }
-    else if (aLocalname.equals("intersection")) {
+    else if (aLocalname == "intersection") {
       lFunc = new SFIntersectionFunction(this);
     }
-    else if (aLocalname.equals("union")) {
+    else if (aLocalname == "union") {
       lFunc = new SFUnionFunction(this);
     }
-    else if (aLocalname.equals("difference")) {
+    else if (aLocalname == "difference") {
       lFunc = new SFDifferenceFunction(this);
     }
-    else if (aLocalname.equals("sym-difference")) {
+    else if (aLocalname == "sym-difference") {
       lFunc = new SFSymDifferenceFunction(this);
     }
-    else if (aLocalname.equals("area")) {
+    else if (aLocalname == "area") {
       lFunc = new SFAreaFunction(this);
     }
-    else if (aLocalname.equals("length")) {
+    else if (aLocalname == "length") {
       lFunc = new SFLengthFunction(this);
     }
-    else if (aLocalname.equals("is-within-distance")) {
+    else if (aLocalname == "is-within-distance") {
       lFunc = new SFIsWithinDistanceFunction(this);
     }
-    else if (aLocalname.equals("centroid")) {
+    else if (aLocalname == "centroid") {
       lFunc = new SFCentroidFunction(this);
     }
-    else if (aLocalname.equals("point-on-surface")) {
+    else if (aLocalname == "point-on-surface") {
       lFunc = new SFPointOnSurfaceFunction(this);
     }
-    else if (aLocalname.equals("x")) {
+    else if (aLocalname == "x") {
       lFunc = new SFXFunction(this);
     }
-    else if (aLocalname.equals("y")) {
+    else if (aLocalname == "y") {
       lFunc = new SFYFunction(this);
     }
-    else if (aLocalname.equals("z")) {
+    else if (aLocalname == "z") {
       lFunc = new SFZFunction(this);
     }
-    else if (aLocalname.equals("m")) {
+    else if (aLocalname == "m") {
       lFunc = new SFMFunction(this);
     }
-    else if (aLocalname.equals("start-point")) {
+    else if (aLocalname == "start-point") {
       lFunc = new SFStartPointFunction(this);
     }
-    else if (aLocalname.equals("end-point")) {
+    else if (aLocalname == "end-point") {
       lFunc = new SFEndPointFunction(this);
     }
-    else if (aLocalname.equals("is-closed")) {
+    else if (aLocalname == "is-closed") {
       lFunc = new SFIsClosedFunction(this);
     }
-    else if (aLocalname.equals("is-ring")) {
+    else if (aLocalname == "is-ring") {
       lFunc = new SFIsRingFunction(this);
     }
-    else if (aLocalname.equals("num-points")) {
+    else if (aLocalname == "num-points") {
       lFunc = new SFNumPointsFunction(this);
     }
-    else if (aLocalname.equals("point-n")) {
+    else if (aLocalname == "point-n") {
       lFunc = new SFPointNFunction(this);
     }
-    else if (aLocalname.equals("exterior-ring")) {
+    else if (aLocalname == "exterior-ring") {
       lFunc = new SFExteriorRingFunction(this);
     }
-    else if (aLocalname.equals("num-interior-ring")) {
+    else if (aLocalname == "num-interior-ring") {
       lFunc = new SFNumInteriorRingFunction(this);
     }
-    else if (aLocalname.equals("interior-ring-n")) {
+    else if (aLocalname == "interior-ring-n") {
       lFunc = new SFInteriorRingNFunction(this);
     }
-    else if (aLocalname.equals("num-patches")) {
+    else if (aLocalname == "num-patches") {
       lFunc = new SFNumPatchesFunction(this);
     }
-    else if (aLocalname.equals("patch-n")) {
+    else if (aLocalname == "patch-n") {
       lFunc = new SFPatchNFunction(this);
     }
-    else if (aLocalname.equals("bounding-polygons")) {
+    else if (aLocalname == "bounding-polygons") {
       lFunc = new SFBoundingPolygonsFunction(this);
     }
   }
