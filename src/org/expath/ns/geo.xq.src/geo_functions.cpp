@@ -2152,7 +2152,7 @@ bool GeoFunction::isSurface(const geos::geom::MultiPolygon *multipolygon,
           delete segment_union;
           segment_union = temp_union;
         }
-        if(!segment_union->equals(ring1))
+        if(segment_union != ring1)
         {
           if(is_closed)
             *is_closed = false;
