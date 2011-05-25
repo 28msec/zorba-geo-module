@@ -49,12 +49,13 @@
 #include <sstream>
 #include <iomanip>
 
-#include <zorba/zorba.h>
-#include <zorba/store_consts.h>
-#include <zorba/singleton_item_sequence.h>
-#include <zorba/vector_item_sequence.h>
 #include <zorba/empty_sequence.h>
+#include <zorba/singleton_item_sequence.h>
+#include <zorba/store_consts.h>
 #include <zorba/user_exception.h>
+#include <zorba/vector_item_sequence.h>
+#include <zorba/zorba.h>
+#include <zorba/zorba_functions.h>
 
 #include "geo_module.h"
 
@@ -248,8 +249,8 @@ int GeoFunction::get_srsDimension(zorba::Item &item, int prev_srsdimension) cons
                    attr_item))
   {
     String  attr_value = attr_item.getStringValue();
-    String  trimed_value = attr_value.trim();
-    int srs_dim = atoi(trimed_value.c_str());
+    zfn::trim( attr_value );
+    int srs_dim = atoi(attr_value.c_str());
     if((srs_dim != 2) && (srs_dim != 3))
     {
       std::stringstream lErrorMessage;
