@@ -20,7 +20,7 @@
 
 #include <zorba/external_module.h>
 #include <zorba/nonepure_stateless_function.h>
-#include <zorba/zorbastring.h>
+#include <zorba/zorba_string.h>
 
 namespace geos{
 namespace geom{
