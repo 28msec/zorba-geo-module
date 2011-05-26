@@ -97,7 +97,7 @@ GeoFunction::throwError(
     String errName(err_localname);
     Item errQName = GeoModule::getItemFactory()->createQName(errNS, errName);
     String errDescription(aErrorMessage);
-    USER_EXCEPTION(errQName, errDescription);
+    throw USER_EXCEPTION(errQName, errDescription);
 }
 
 enum GeoFunction::gmlsf_types GeoFunction::getGmlSFGeometricType(Item item) const

@@ -1,1 +1,1 @@
-Error: GEOSError
+Error: http://expath.org/ns/error:GEOSError
