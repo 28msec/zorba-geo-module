@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <gml:MultiSurface xmlns:gml="http://www.opengis.net/gml">
   <gml:Polygon>
     <gml:exterior>
