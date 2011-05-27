@@ -237,7 +237,7 @@ declare function geoproj:wgs84-to-omerc-gmlpos( $lat-0 as xs:double,
     else
       validate{$lat-long-degree} )
   return
-  geoproj:wgs84-to-omerc-gmlpos-validated($lat-0, $long-c, $k0, $validated-lat-long);
+  geoproj:wgs84-to-omerc-gmlpos-validated($lat-0, $long-c, $k0, $validated-lat-long)
 };
 
 declare %private function geoproj:wgs84-to-omerc-gmlpos-validated( $lat_0 as xs:double,
@@ -323,7 +323,7 @@ declare function geoproj:omerc-to-wgs84($lat-0 as xs:double,
     else
       validate{$coord} )
   return
-  geoproj:omerc-to-wgs84-validated($lat-0, $long-c, $k0, $validated-coords);
+  geoproj:omerc-to-wgs84-validated($lat-0, $long-c, $k0, $validated-coords)
 };
 
 declare %private function geoproj:omerc-to-wgs84-validated($lat_0 as xs:double,
