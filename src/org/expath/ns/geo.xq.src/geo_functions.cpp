@@ -468,7 +468,8 @@ int GeoFunction::getCoordinateDimension(const geos::geom::Geometry *geos_geometr
     size_t    cs_size = cs->getSize();
     for(size_t i=0;i<cs_size;i++)
     {
-      if(!ISNAN(cs->getAt(i).z))
+      double z = cs->getAt(i).z;
+      if(!ISNAN(z))
         return 3;
     }
     return 2;

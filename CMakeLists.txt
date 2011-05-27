@@ -26,8 +26,6 @@ INCLUDE ("${Zorba_USE_FILE}")
 ADD_TEST_DIRECTORY("${PROJECT_SOURCE_DIR}/test")
 ADD_SUBDIRECTORY("src")
 
-EXPECTED_FAILURE("zorba_geo_module/geo/union5_3d.xq" 3301953)
-
 EXPECTED_FAILURE("zorba_geo_module/geo/dms1.xq" 3303740)
 EXPECTED_FAILURE("zorba_geo_module/geo/dms2.xq" 3303740)
 EXPECTED_FAILURE("zorba_geo_module/geo/geoproj1.xq" 3303740)
