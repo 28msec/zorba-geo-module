@@ -209,16 +209,16 @@ declare variable $zorba-geo:InternalError as xs:QName := fn:QName($zorba-geo:err
  :    gml:Surface, gml:Polygon, gml:MultiPoint, gml:MultiCurve, gml:MultiSurface, gml:MultiGeometry
  : @return 0 for point, 1 for line, 2 for surface.
  : @error geo-err:UnrecognizedGeoObject
- : @example rbkt/Queries/zorba/geo/dimension1.xq
- : @example rbkt/Queries/zorba/geo/dimension2.xq
- : @example rbkt/Queries/zorba/geo/dimension3.xq
- : @example rbkt/Queries/zorba/geo/dimension4.xq
- : @example rbkt/Queries/zorba/geo/dimension5.xq
- : @example rbkt/Queries/zorba/geo/dimension6.xq
- : @example rbkt/Queries/zorba/geo/dimension7.xq
- : @example rbkt/Queries/zorba/geo/dimension8.xq
- : @example rbkt/Queries/zorba/geo/dimension9.xq
- : @example rbkt/Queries/zorba/geo/dimension10.xq
+ : @example test/Queries/geo/dimension1.xq
+ : @example test/Queries/geo/dimension2.xq
+ : @example test/Queries/geo/dimension3.xq
+ : @example test/Queries/geo/dimension4.xq
+ : @example test/Queries/geo/dimension5.xq
+ : @example test/Queries/geo/dimension6.xq
+ : @example test/Queries/geo/dimension7.xq
+ : @example test/Queries/geo/dimension8.xq
+ : @example test/Queries/geo/dimension9.xq
+ : @example test/Queries/geo/dimension10.xq
 :)
 declare function zorba-geo:dimension( $geometry as element()) as xs:integer external;
 
@@ -232,12 +232,12 @@ declare function zorba-geo:dimension( $geometry as element()) as xs:integer exte
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/coordinate_dimension1.xq
- : @example rbkt/Queries/zorba/geo/coordinate_dimension2.xq
- : @example rbkt/Queries/zorba/geo/coordinate_dimension3.xq
- : @example rbkt/Queries/zorba/geo/coordinate_dimension4.xq
- : @example rbkt/Queries/zorba/geo/coordinate_dimension5.xq
- : @example rbkt/Queries/zorba/geo/coordinate_dimension6.xq
+ : @example test/Queries/geo/coordinate_dimension1.xq
+ : @example test/Queries/geo/coordinate_dimension2.xq
+ : @example test/Queries/geo/coordinate_dimension3.xq
+ : @example test/Queries/geo/coordinate_dimension4.xq
+ : @example test/Queries/geo/coordinate_dimension5.xq
+ : @example test/Queries/geo/coordinate_dimension6.xq
 :)
 declare function zorba-geo:coordinate-dimension( $geometry as element()) as xs:integer external;
 
@@ -252,17 +252,17 @@ declare function zorba-geo:coordinate-dimension( $geometry as element()) as xs:i
  :     "gml:MultiPoint" for MultiPoint, "gml:MultiCurve" for MultiCurve,
  :     "gml:MultiSurface" for MultiSurface, "gml:MultiGeometry" for MultiGeometry
  : @error geo-err:UnrecognizedGeoObject
- : @example rbkt/Queries/zorba/geo/geometry_type1.xq
- : @example rbkt/Queries/zorba/geo/geometry_type2.xq
- : @example rbkt/Queries/zorba/geo/geometry_type3.xq
- : @example rbkt/Queries/zorba/geo/geometry_type4.xq
- : @example rbkt/Queries/zorba/geo/geometry_type5.xq
- : @example rbkt/Queries/zorba/geo/geometry_type6.xq
- : @example rbkt/Queries/zorba/geo/geometry_type7.xq
- : @example rbkt/Queries/zorba/geo/geometry_type8.xq
- : @example rbkt/Queries/zorba/geo/geometry_type9.xq
- : @example rbkt/Queries/zorba/geo/geometry_type10.xq
- : @example rbkt/Queries/zorba/geo/geometry_type11.xq
+ : @example test/Queries/geo/geometry_type1.xq
+ : @example test/Queries/geo/geometry_type2.xq
+ : @example test/Queries/geo/geometry_type3.xq
+ : @example test/Queries/geo/geometry_type4.xq
+ : @example test/Queries/geo/geometry_type5.xq
+ : @example test/Queries/geo/geometry_type6.xq
+ : @example test/Queries/geo/geometry_type7.xq
+ : @example test/Queries/geo/geometry_type8.xq
+ : @example test/Queries/geo/geometry_type9.xq
+ : @example test/Queries/geo/geometry_type10.xq
+ : @example test/Queries/geo/geometry_type11.xq
 :)
 declare function zorba-geo:geometry-type( $geometry as element()) as xs:QName? external;
 
@@ -278,11 +278,11 @@ declare function zorba-geo:geometry-type( $geometry as element()) as xs:QName? e
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/srid1.xq
- : @example rbkt/Queries/zorba/geo/srid2.xq
- : @example rbkt/Queries/zorba/geo/srid3.xq
- : @example rbkt/Queries/zorba/geo/srid4.xq
- : @example rbkt/Queries/zorba/geo/srid5.xq
+ : @example test/Queries/geo/srid1.xq
+ : @example test/Queries/geo/srid2.xq
+ : @example test/Queries/geo/srid3.xq
+ : @example test/Queries/geo/srid4.xq
+ : @example test/Queries/geo/srid5.xq
 :)
 declare function zorba-geo:srid( $geometry as element()) as xs:anyURI? external;
 
@@ -297,9 +297,9 @@ declare function zorba-geo:srid( $geometry as element()) as xs:anyURI? external;
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/num-geometries1.xq
- : @example rbkt/Queries/zorba/geo/num-geometries2.xq
- : @example rbkt/Queries/zorba/geo/num-geometries3.xq
+ : @example test/Queries/geo/num-geometries1.xq
+ : @example test/Queries/geo/num-geometries2.xq
+ : @example test/Queries/geo/num-geometries3.xq
 :)
 declare function zorba-geo:num-geometries( $geometry as element()) as xs:unsignedInt external;
 
@@ -316,10 +316,10 @@ declare function zorba-geo:num-geometries( $geometry as element()) as xs:unsigne
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/geometry-n1.xq
- : @example rbkt/Queries/zorba/geo/geometry-n2.xq
- : @example rbkt/Queries/zorba/geo/geometry-n3.xq
- : @example rbkt/Queries/zorba/geo/geometry-n4.xq
+ : @example test/Queries/geo/geometry-n1.xq
+ : @example test/Queries/geo/geometry-n2.xq
+ : @example test/Queries/geo/geometry-n3.xq
+ : @example test/Queries/geo/geometry-n4.xq
 :)
 declare function zorba-geo:geometry-n( $geometry as element(), $n as xs:unsignedInt) as element() external;
 
@@ -336,17 +336,17 @@ declare function zorba-geo:geometry-n( $geometry as element(), $n as xs:unsigned
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/envelope1.xq
- : @example rbkt/Queries/zorba/geo/envelope2.xq
- : @example rbkt/Queries/zorba/geo/envelope3.xq
- : @example rbkt/Queries/zorba/geo/envelope4.xq
- : @example rbkt/Queries/zorba/geo/envelope5.xq
- : @example rbkt/Queries/zorba/geo/envelope6.xq
- : @example rbkt/Queries/zorba/geo/envelope7.xq
- : @example rbkt/Queries/zorba/geo/envelope8.xq
- : @example rbkt/Queries/zorba/geo/envelope9.xq
- : @example rbkt/Queries/zorba/geo/envelope11.xq
- : @example rbkt/Queries/zorba/geo/envelope12.xq
+ : @example test/Queries/geo/envelope1.xq
+ : @example test/Queries/geo/envelope2.xq
+ : @example test/Queries/geo/envelope3.xq
+ : @example test/Queries/geo/envelope4.xq
+ : @example test/Queries/geo/envelope5.xq
+ : @example test/Queries/geo/envelope6.xq
+ : @example test/Queries/geo/envelope7.xq
+ : @example test/Queries/geo/envelope8.xq
+ : @example test/Queries/geo/envelope9.xq
+ : @example test/Queries/geo/envelope11.xq
+ : @example test/Queries/geo/envelope12.xq
 :)
 declare function zorba-geo:envelope( $geometry as element()) as element(gml:Envelope) external;
 
@@ -362,15 +362,15 @@ declare function zorba-geo:envelope( $geometry as element()) as element(gml:Enve
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/as_text1.xq
- : @example rbkt/Queries/zorba/geo/as_text2.xq
- : @example rbkt/Queries/zorba/geo/as_text3.xq
- : @example rbkt/Queries/zorba/geo/as_text4.xq
- : @example rbkt/Queries/zorba/geo/as_text5.xq
- : @example rbkt/Queries/zorba/geo/as_text6.xq
- : @example rbkt/Queries/zorba/geo/as_text7.xq
- : @example rbkt/Queries/zorba/geo/as_text8.xq
- : @example rbkt/Queries/zorba/geo/as_text9.xq
+ : @example test/Queries/geo/as_text1.xq
+ : @example test/Queries/geo/as_text2.xq
+ : @example test/Queries/geo/as_text3.xq
+ : @example test/Queries/geo/as_text4.xq
+ : @example test/Queries/geo/as_text5.xq
+ : @example test/Queries/geo/as_text6.xq
+ : @example test/Queries/geo/as_text7.xq
+ : @example test/Queries/geo/as_text8.xq
+ : @example test/Queries/geo/as_text9.xq
 :)
 declare function zorba-geo:as-text( $geometry as element()) as xs:string external;
 
@@ -386,7 +386,7 @@ declare function zorba-geo:as-text( $geometry as element()) as xs:string externa
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/as_binary1.xq
+ : @example test/Queries/geo/as_binary1.xq
 :)
 declare function zorba-geo:as-binary( $geometry as element()) as xs:base64Binary external;
 
@@ -399,11 +399,11 @@ declare function zorba-geo:as-binary( $geometry as element()) as xs:base64Binary
  : @return true if $geometry is not a valid gmlsf object or if is empty.
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/is_empty1.xq
- : @example rbkt/Queries/zorba/geo/is_empty2.xq
- : @example rbkt/Queries/zorba/geo/is_empty3.xq
- : @example rbkt/Queries/zorba/geo/is_empty4.xq
- : @example rbkt/Queries/zorba/geo/is_empty5.xq
+ : @example test/Queries/geo/is_empty1.xq
+ : @example test/Queries/geo/is_empty2.xq
+ : @example test/Queries/geo/is_empty3.xq
+ : @example test/Queries/geo/is_empty4.xq
+ : @example test/Queries/geo/is_empty5.xq
 :)
 declare function zorba-geo:is-empty( $geometry as element()?) as xs:boolean external;
 
@@ -418,20 +418,20 @@ declare function zorba-geo:is-empty( $geometry as element()?) as xs:boolean exte
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/is_simple1.xq
- : @example rbkt/Queries/zorba/geo/is_simple2.xq
- : @example rbkt/Queries/zorba/geo/is_simple3.xq
- : @example rbkt/Queries/zorba/geo/is_simple4.xq
- : @example rbkt/Queries/zorba/geo/is_simple5.xq
- : @example rbkt/Queries/zorba/geo/is_simple6.xq
- : @example rbkt/Queries/zorba/geo/is_simple7.xq
- : @example rbkt/Queries/zorba/geo/is_simple8.xq
- : @example rbkt/Queries/zorba/geo/is_simple9.xq
- : @example rbkt/Queries/zorba/geo/is_simple10.xq
- : @example rbkt/Queries/zorba/geo/is_simple11.xq
- : @example rbkt/Queries/zorba/geo/is_simple12.xq
- : @example rbkt/Queries/zorba/geo/is_simple13.xq
- : @example rbkt/Queries/zorba/geo/is_simple14.xq
+ : @example test/Queries/geo/is_simple1.xq
+ : @example test/Queries/geo/is_simple2.xq
+ : @example test/Queries/geo/is_simple3.xq
+ : @example test/Queries/geo/is_simple4.xq
+ : @example test/Queries/geo/is_simple5.xq
+ : @example test/Queries/geo/is_simple6.xq
+ : @example test/Queries/geo/is_simple7.xq
+ : @example test/Queries/geo/is_simple8.xq
+ : @example test/Queries/geo/is_simple9.xq
+ : @example test/Queries/geo/is_simple10.xq
+ : @example test/Queries/geo/is_simple11.xq
+ : @example test/Queries/geo/is_simple12.xq
+ : @example test/Queries/geo/is_simple13.xq
+ : @example test/Queries/geo/is_simple14.xq
 :)
 declare function zorba-geo:is-simple( $geometry as element()) as xs:boolean external;
 
@@ -445,8 +445,8 @@ declare function zorba-geo:is-simple( $geometry as element()) as xs:boolean exte
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/is_3D1.xq
- : @example rbkt/Queries/zorba/geo/is_3D2.xq
+ : @example test/Queries/geo/is_3D1.xq
+ : @example test/Queries/geo/is_3D2.xq
 :)
 declare function zorba-geo:is-3d( $geometry as element()) as xs:boolean external;
 
@@ -459,7 +459,7 @@ declare function zorba-geo:is-3d( $geometry as element()) as xs:boolean external
  :    gml:Surface, gml:Polygon, gml:MultiPoint, gml:MultiCurve, gml:MultiSurface, gml:MultiGeometry
  : @return false. 
  : @error geo-err:UnrecognizedGeoObject
- : @example rbkt/Queries/zorba/geo/is_measured1.xq
+ : @example test/Queries/geo/is_measured1.xq
 :)
 declare function zorba-geo:is-measured( $geometry as element()) as xs:boolean external;
 
@@ -483,20 +483,20 @@ declare function zorba-geo:is-measured( $geometry as element()) as xs:boolean ex
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/boundary1.xq
- : @example rbkt/Queries/zorba/geo/boundary2.xq
- : @example rbkt/Queries/zorba/geo/boundary3.xq
- : @example rbkt/Queries/zorba/geo/boundary4.xq
- : @example rbkt/Queries/zorba/geo/boundary5.xq
- : @example rbkt/Queries/zorba/geo/boundary6.xq
- : @example rbkt/Queries/zorba/geo/boundary7.xq
- : @example rbkt/Queries/zorba/geo/boundary8.xq
- : @example rbkt/Queries/zorba/geo/boundary9.xq
- : @example rbkt/Queries/zorba/geo/boundary10.xq
- : @example rbkt/Queries/zorba/geo/boundary11.xq
- : @example rbkt/Queries/zorba/geo/boundary12.xq
- : @example rbkt/Queries/zorba/geo/boundary13.xq
- : @example rbkt/Queries/zorba/geo/boundary14.xq
+ : @example test/Queries/geo/boundary1.xq
+ : @example test/Queries/geo/boundary2.xq
+ : @example test/Queries/geo/boundary3.xq
+ : @example test/Queries/geo/boundary4.xq
+ : @example test/Queries/geo/boundary5.xq
+ : @example test/Queries/geo/boundary6.xq
+ : @example test/Queries/geo/boundary7.xq
+ : @example test/Queries/geo/boundary8.xq
+ : @example test/Queries/geo/boundary9.xq
+ : @example test/Queries/geo/boundary10.xq
+ : @example test/Queries/geo/boundary11.xq
+ : @example test/Queries/geo/boundary12.xq
+ : @example test/Queries/geo/boundary13.xq
+ : @example test/Queries/geo/boundary14.xq
 :)
 declare function zorba-geo:boundary( $geometry as element()) as element()* external;
 
@@ -518,15 +518,15 @@ declare function zorba-geo:boundary( $geometry as element()) as element()* exter
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:SRSNotIdenticalInBothGeometries
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/equals1.xq
- : @example rbkt/Queries/zorba/geo/equals2.xq
- : @example rbkt/Queries/zorba/geo/equals3.xq
- : @example rbkt/Queries/zorba/geo/equals4.xq
- : @example rbkt/Queries/zorba/geo/equals5.xq
- : @example rbkt/Queries/zorba/geo/equals6.xq
- : @example rbkt/Queries/zorba/geo/equals7.xq
- : @example rbkt/Queries/zorba/geo/equals8.xq
- : @example rbkt/Queries/zorba/geo/equals9.xq
+ : @example test/Queries/geo/equals1.xq
+ : @example test/Queries/geo/equals2.xq
+ : @example test/Queries/geo/equals3.xq
+ : @example test/Queries/geo/equals4.xq
+ : @example test/Queries/geo/equals5.xq
+ : @example test/Queries/geo/equals6.xq
+ : @example test/Queries/geo/equals7.xq
+ : @example test/Queries/geo/equals8.xq
+ : @example test/Queries/geo/equals9.xq
 :)
 declare function zorba-geo:equals( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
 
@@ -548,7 +548,7 @@ declare function zorba-geo:equals( $geometry1 as element(),  $geometry2 as eleme
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:SRSNotIdenticalInBothGeometries
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/covers6.xq
+ : @example test/Queries/geo/covers6.xq
 :)
 declare function zorba-geo:covers( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
 
@@ -569,15 +569,15 @@ declare function zorba-geo:covers( $geometry1 as element(),  $geometry2 as eleme
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:SRSNotIdenticalInBothGeometries
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/disjoint1.xq
- : @example rbkt/Queries/zorba/geo/disjoint2.xq
- : @example rbkt/Queries/zorba/geo/disjoint3.xq
- : @example rbkt/Queries/zorba/geo/disjoint4.xq
- : @example rbkt/Queries/zorba/geo/disjoint5.xq
- : @example rbkt/Queries/zorba/geo/disjoint6.xq
- : @example rbkt/Queries/zorba/geo/disjoint7.xq
- : @example rbkt/Queries/zorba/geo/disjoint8.xq
- : @example rbkt/Queries/zorba/geo/disjoint9.xq
+ : @example test/Queries/geo/disjoint1.xq
+ : @example test/Queries/geo/disjoint2.xq
+ : @example test/Queries/geo/disjoint3.xq
+ : @example test/Queries/geo/disjoint4.xq
+ : @example test/Queries/geo/disjoint5.xq
+ : @example test/Queries/geo/disjoint6.xq
+ : @example test/Queries/geo/disjoint7.xq
+ : @example test/Queries/geo/disjoint8.xq
+ : @example test/Queries/geo/disjoint9.xq
 :)
 declare function zorba-geo:disjoint( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
 
@@ -595,16 +595,16 @@ declare function zorba-geo:disjoint( $geometry1 as element(),  $geometry2 as ele
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:SRSNotIdenticalInBothGeometries
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/intersects1.xq
- : @example rbkt/Queries/zorba/geo/intersects2.xq
- : @example rbkt/Queries/zorba/geo/intersects3.xq
- : @example rbkt/Queries/zorba/geo/intersects4.xq
- : @example rbkt/Queries/zorba/geo/intersects5.xq
- : @example rbkt/Queries/zorba/geo/intersects6.xq
- : @example rbkt/Queries/zorba/geo/intersects6_3d.xq
- : @example rbkt/Queries/zorba/geo/intersects7.xq
- : @example rbkt/Queries/zorba/geo/intersects8.xq
- : @example rbkt/Queries/zorba/geo/intersects9.xq
+ : @example test/Queries/geo/intersects1.xq
+ : @example test/Queries/geo/intersects2.xq
+ : @example test/Queries/geo/intersects3.xq
+ : @example test/Queries/geo/intersects4.xq
+ : @example test/Queries/geo/intersects5.xq
+ : @example test/Queries/geo/intersects6.xq
+ : @example test/Queries/geo/intersects6_3d.xq
+ : @example test/Queries/geo/intersects7.xq
+ : @example test/Queries/geo/intersects8.xq
+ : @example test/Queries/geo/intersects9.xq
 :)
 declare function zorba-geo:intersects( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
 
@@ -623,15 +623,15 @@ declare function zorba-geo:intersects( $geometry1 as element(),  $geometry2 as e
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:SRSNotIdenticalInBothGeometries
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/touches1.xq
- : @example rbkt/Queries/zorba/geo/touches2.xq
- : @example rbkt/Queries/zorba/geo/touches3.xq
- : @example rbkt/Queries/zorba/geo/touches4.xq
- : @example rbkt/Queries/zorba/geo/touches5.xq
- : @example rbkt/Queries/zorba/geo/touches6.xq
- : @example rbkt/Queries/zorba/geo/touches7.xq
- : @example rbkt/Queries/zorba/geo/touches8.xq
- : @example rbkt/Queries/zorba/geo/touches9.xq
+ : @example test/Queries/geo/touches1.xq
+ : @example test/Queries/geo/touches2.xq
+ : @example test/Queries/geo/touches3.xq
+ : @example test/Queries/geo/touches4.xq
+ : @example test/Queries/geo/touches5.xq
+ : @example test/Queries/geo/touches6.xq
+ : @example test/Queries/geo/touches7.xq
+ : @example test/Queries/geo/touches8.xq
+ : @example test/Queries/geo/touches9.xq
 :)
 declare function zorba-geo:touches( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
 
@@ -656,16 +656,16 @@ declare function zorba-geo:touches( $geometry1 as element(),  $geometry2 as elem
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:SRSNotIdenticalInBothGeometries
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/crosses1.xq
- : @example rbkt/Queries/zorba/geo/crosses2.xq
- : @example rbkt/Queries/zorba/geo/crosses3.xq
- : @example rbkt/Queries/zorba/geo/crosses4.xq
- : @example rbkt/Queries/zorba/geo/crosses5.xq
- : @example rbkt/Queries/zorba/geo/crosses6.xq
- : @example rbkt/Queries/zorba/geo/crosses7.xq
- : @example rbkt/Queries/zorba/geo/crosses8.xq
- : @example rbkt/Queries/zorba/geo/crosses9.xq
- : @example rbkt/Queries/zorba/geo/crosses10.xq
+ : @example test/Queries/geo/crosses1.xq
+ : @example test/Queries/geo/crosses2.xq
+ : @example test/Queries/geo/crosses3.xq
+ : @example test/Queries/geo/crosses4.xq
+ : @example test/Queries/geo/crosses5.xq
+ : @example test/Queries/geo/crosses6.xq
+ : @example test/Queries/geo/crosses7.xq
+ : @example test/Queries/geo/crosses8.xq
+ : @example test/Queries/geo/crosses9.xq
+ : @example test/Queries/geo/crosses10.xq
 :)
 declare function zorba-geo:crosses( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
 
@@ -684,15 +684,15 @@ declare function zorba-geo:crosses( $geometry1 as element(),  $geometry2 as elem
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:SRSNotIdenticalInBothGeometries
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/within1.xq
- : @example rbkt/Queries/zorba/geo/within2.xq
- : @example rbkt/Queries/zorba/geo/within3.xq
- : @example rbkt/Queries/zorba/geo/within4.xq
- : @example rbkt/Queries/zorba/geo/within5.xq
- : @example rbkt/Queries/zorba/geo/within6.xq
- : @example rbkt/Queries/zorba/geo/within7.xq
- : @example rbkt/Queries/zorba/geo/within8.xq
- : @example rbkt/Queries/zorba/geo/within9.xq
+ : @example test/Queries/geo/within1.xq
+ : @example test/Queries/geo/within2.xq
+ : @example test/Queries/geo/within3.xq
+ : @example test/Queries/geo/within4.xq
+ : @example test/Queries/geo/within5.xq
+ : @example test/Queries/geo/within6.xq
+ : @example test/Queries/geo/within7.xq
+ : @example test/Queries/geo/within8.xq
+ : @example test/Queries/geo/within9.xq
 :)
 declare function zorba-geo:within( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
 
@@ -710,16 +710,16 @@ declare function zorba-geo:within( $geometry1 as element(),  $geometry2 as eleme
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:SRSNotIdenticalInBothGeometries
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/contains1.xq
- : @example rbkt/Queries/zorba/geo/contains2.xq
- : @example rbkt/Queries/zorba/geo/contains3.xq
- : @example rbkt/Queries/zorba/geo/contains4.xq
- : @example rbkt/Queries/zorba/geo/contains5.xq
- : @example rbkt/Queries/zorba/geo/contains6.xq
- : @example rbkt/Queries/zorba/geo/contains7.xq
- : @example rbkt/Queries/zorba/geo/contains8.xq
- : @example rbkt/Queries/zorba/geo/contains9.xq
- : @example rbkt/Queries/zorba/geo/contains10.xq
+ : @example test/Queries/geo/contains1.xq
+ : @example test/Queries/geo/contains2.xq
+ : @example test/Queries/geo/contains3.xq
+ : @example test/Queries/geo/contains4.xq
+ : @example test/Queries/geo/contains5.xq
+ : @example test/Queries/geo/contains6.xq
+ : @example test/Queries/geo/contains7.xq
+ : @example test/Queries/geo/contains8.xq
+ : @example test/Queries/geo/contains9.xq
+ : @example test/Queries/geo/contains10.xq
 :)
 declare function zorba-geo:contains( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
 
@@ -739,18 +739,18 @@ declare function zorba-geo:contains( $geometry1 as element(),  $geometry2 as ele
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:SRSNotIdenticalInBothGeometries
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/overlaps1.xq
- : @example rbkt/Queries/zorba/geo/overlaps2.xq
- : @example rbkt/Queries/zorba/geo/overlaps3.xq
- : @example rbkt/Queries/zorba/geo/overlaps4.xq
- : @example rbkt/Queries/zorba/geo/overlaps5.xq
- : @example rbkt/Queries/zorba/geo/overlaps6.xq
- : @example rbkt/Queries/zorba/geo/overlaps7.xq
- : @example rbkt/Queries/zorba/geo/overlaps8.xq
- : @example rbkt/Queries/zorba/geo/overlaps9.xq
- : @example rbkt/Queries/zorba/geo/overlaps10.xq
- : @example rbkt/Queries/zorba/geo/overlaps11.xq
- : @example rbkt/Queries/zorba/geo/overlaps12.xq
+ : @example test/Queries/geo/overlaps1.xq
+ : @example test/Queries/geo/overlaps2.xq
+ : @example test/Queries/geo/overlaps3.xq
+ : @example test/Queries/geo/overlaps4.xq
+ : @example test/Queries/geo/overlaps5.xq
+ : @example test/Queries/geo/overlaps6.xq
+ : @example test/Queries/geo/overlaps7.xq
+ : @example test/Queries/geo/overlaps8.xq
+ : @example test/Queries/geo/overlaps9.xq
+ : @example test/Queries/geo/overlaps10.xq
+ : @example test/Queries/geo/overlaps11.xq
+ : @example test/Queries/geo/overlaps12.xq
 :)
 declare function zorba-geo:overlaps( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
 
@@ -803,10 +803,10 @@ declare function zorba-geo:overlaps( $geometry1 as element(),  $geometry2 as ele
  : @error geo-err:SRSNotIdenticalInBothGeometries
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/relate1.xq
- : @example rbkt/Queries/zorba/geo/relate2.xq
- : @example rbkt/Queries/zorba/geo/relate3.xq
- : @example rbkt/Queries/zorba/geo/relate4.xq
+ : @example test/Queries/geo/relate1.xq
+ : @example test/Queries/geo/relate2.xq
+ : @example test/Queries/geo/relate3.xq
+ : @example test/Queries/geo/relate4.xq
 :)
 declare function zorba-geo:relate( $geometry1 as element(),  $geometry2 as element(), $intersection_matrix as xs:string) as xs:boolean external;
 
@@ -826,7 +826,7 @@ declare function zorba-geo:relate( $geometry1 as element(),  $geometry2 as eleme
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:SRSNotIdenticalInBothGeometries
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/distance1.xq
+ : @example test/Queries/geo/distance1.xq
 :)
 declare function zorba-geo:distance( $geometry1 as element(),  $geometry2 as element()) as xs:double external;
 
@@ -842,16 +842,16 @@ declare function zorba-geo:distance( $geometry1 as element(),  $geometry2 as ele
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/buffer1.xq
- : @example rbkt/Queries/zorba/geo/buffer2.xq
- : @example rbkt/Queries/zorba/geo/buffer3.xq
- : @example rbkt/Queries/zorba/geo/buffer4.xq
- : @example rbkt/Queries/zorba/geo/buffer5.xq
- : @example rbkt/Queries/zorba/geo/buffer6.xq
- : @example rbkt/Queries/zorba/geo/buffer7.xq
- : @example rbkt/Queries/zorba/geo/buffer8.xq
- : @example rbkt/Queries/zorba/geo/buffer9.xq
- : @example rbkt/Queries/zorba/geo/buffer10.xq
+ : @example test/Queries/geo/buffer1.xq
+ : @example test/Queries/geo/buffer2.xq
+ : @example test/Queries/geo/buffer3.xq
+ : @example test/Queries/geo/buffer4.xq
+ : @example test/Queries/geo/buffer5.xq
+ : @example test/Queries/geo/buffer6.xq
+ : @example test/Queries/geo/buffer7.xq
+ : @example test/Queries/geo/buffer8.xq
+ : @example test/Queries/geo/buffer9.xq
+ : @example test/Queries/geo/buffer10.xq
 :)
 declare function zorba-geo:buffer( $geometry as element(),  $distance as xs:double) as element() external;
 
@@ -866,17 +866,17 @@ declare function zorba-geo:buffer( $geometry as element(),  $distance as xs:doub
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/convex-hull1.xq
- : @example rbkt/Queries/zorba/geo/convex-hull2.xq
- : @example rbkt/Queries/zorba/geo/convex-hull3.xq
- : @example rbkt/Queries/zorba/geo/convex-hull3_3d.xq
- : @example rbkt/Queries/zorba/geo/convex-hull4.xq
- : @example rbkt/Queries/zorba/geo/convex-hull5.xq
- : @example rbkt/Queries/zorba/geo/convex-hull6.xq
- : @example rbkt/Queries/zorba/geo/convex-hull7.xq
- : @example rbkt/Queries/zorba/geo/convex-hull8.xq
- : @example rbkt/Queries/zorba/geo/convex-hull9.xq
- : @example rbkt/Queries/zorba/geo/convex-hull10.xq
+ : @example test/Queries/geo/convex-hull1.xq
+ : @example test/Queries/geo/convex-hull2.xq
+ : @example test/Queries/geo/convex-hull3.xq
+ : @example test/Queries/geo/convex-hull3_3d.xq
+ : @example test/Queries/geo/convex-hull4.xq
+ : @example test/Queries/geo/convex-hull5.xq
+ : @example test/Queries/geo/convex-hull6.xq
+ : @example test/Queries/geo/convex-hull7.xq
+ : @example test/Queries/geo/convex-hull8.xq
+ : @example test/Queries/geo/convex-hull9.xq
+ : @example test/Queries/geo/convex-hull10.xq
 :)
 declare function zorba-geo:convex-hull( $geometry as element()) as element() external;
 
@@ -896,17 +896,17 @@ declare function zorba-geo:convex-hull( $geometry as element()) as element() ext
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:SRSNotIdenticalInBothGeometries
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/intersection1.xq
- : @example rbkt/Queries/zorba/geo/intersection2.xq
- : @example rbkt/Queries/zorba/geo/intersection3.xq
- : @example rbkt/Queries/zorba/geo/intersection4.xq
- : @example rbkt/Queries/zorba/geo/intersection5.xq
- : @example rbkt/Queries/zorba/geo/intersection6.xq
- : @example rbkt/Queries/zorba/geo/intersection7.xq
- : @example rbkt/Queries/zorba/geo/intersection8.xq
- : @example rbkt/Queries/zorba/geo/intersection8_3d.xq
- : @example rbkt/Queries/zorba/geo/intersection9.xq
- : @example rbkt/Queries/zorba/geo/intersection10.xq
+ : @example test/Queries/geo/intersection1.xq
+ : @example test/Queries/geo/intersection2.xq
+ : @example test/Queries/geo/intersection3.xq
+ : @example test/Queries/geo/intersection4.xq
+ : @example test/Queries/geo/intersection5.xq
+ : @example test/Queries/geo/intersection6.xq
+ : @example test/Queries/geo/intersection7.xq
+ : @example test/Queries/geo/intersection8.xq
+ : @example test/Queries/geo/intersection8_3d.xq
+ : @example test/Queries/geo/intersection9.xq
+ : @example test/Queries/geo/intersection10.xq
 :)
 declare function zorba-geo:intersection( $geometry1 as element(),  $geometry2 as element()) as element()? external;
 
@@ -924,16 +924,16 @@ declare function zorba-geo:intersection( $geometry1 as element(),  $geometry2 as
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:SRSNotIdenticalInBothGeometries
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/union1.xq
- : @example rbkt/Queries/zorba/geo/union2.xq
- : @example rbkt/Queries/zorba/geo/union3.xq
- : @example rbkt/Queries/zorba/geo/union4.xq
- : @example rbkt/Queries/zorba/geo/union5.xq
- : @example rbkt/Queries/zorba/geo/union5_3d.xq
- : @example rbkt/Queries/zorba/geo/union6.xq
- : @example rbkt/Queries/zorba/geo/union7.xq
- : @example rbkt/Queries/zorba/geo/union8.xq
- : @example rbkt/Queries/zorba/geo/union9.xq
+ : @example test/Queries/geo/union1.xq
+ : @example test/Queries/geo/union2.xq
+ : @example test/Queries/geo/union3.xq
+ : @example test/Queries/geo/union4.xq
+ : @example test/Queries/geo/union5.xq
+ : @example test/Queries/geo/union5_3d.xq
+ : @example test/Queries/geo/union6.xq
+ : @example test/Queries/geo/union7.xq
+ : @example test/Queries/geo/union8.xq
+ : @example test/Queries/geo/union9.xq
 :)
 declare function zorba-geo:union( $geometry1 as element(),  $geometry2 as element()) as element() external;
 
@@ -952,16 +952,16 @@ declare function zorba-geo:union( $geometry1 as element(),  $geometry2 as elemen
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:SRSNotIdenticalInBothGeometries
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/difference1.xq
- : @example rbkt/Queries/zorba/geo/difference2.xq
- : @example rbkt/Queries/zorba/geo/difference3.xq
- : @example rbkt/Queries/zorba/geo/difference4.xq
- : @example rbkt/Queries/zorba/geo/difference5.xq
- : @example rbkt/Queries/zorba/geo/difference6.xq
- : @example rbkt/Queries/zorba/geo/difference7.xq
- : @example rbkt/Queries/zorba/geo/difference8.xq
- : @example rbkt/Queries/zorba/geo/difference9.xq
- : @example rbkt/Queries/zorba/geo/difference10.xq
+ : @example test/Queries/geo/difference1.xq
+ : @example test/Queries/geo/difference2.xq
+ : @example test/Queries/geo/difference3.xq
+ : @example test/Queries/geo/difference4.xq
+ : @example test/Queries/geo/difference5.xq
+ : @example test/Queries/geo/difference6.xq
+ : @example test/Queries/geo/difference7.xq
+ : @example test/Queries/geo/difference8.xq
+ : @example test/Queries/geo/difference9.xq
+ : @example test/Queries/geo/difference10.xq
 :)
 declare function zorba-geo:difference( $geometry1 as element(),  $geometry2 as element()) as element()? external;
 
@@ -981,15 +981,15 @@ declare function zorba-geo:difference( $geometry1 as element(),  $geometry2 as e
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:SRSNotIdenticalInBothGeometries
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/sym-difference1.xq
- : @example rbkt/Queries/zorba/geo/sym-difference2.xq
- : @example rbkt/Queries/zorba/geo/sym-difference3.xq
- : @example rbkt/Queries/zorba/geo/sym-difference4.xq
- : @example rbkt/Queries/zorba/geo/sym-difference5.xq
- : @example rbkt/Queries/zorba/geo/sym-difference6.xq
- : @example rbkt/Queries/zorba/geo/sym-difference7.xq
- : @example rbkt/Queries/zorba/geo/sym-difference8.xq
- : @example rbkt/Queries/zorba/geo/sym-difference9.xq
+ : @example test/Queries/geo/sym-difference1.xq
+ : @example test/Queries/geo/sym-difference2.xq
+ : @example test/Queries/geo/sym-difference3.xq
+ : @example test/Queries/geo/sym-difference4.xq
+ : @example test/Queries/geo/sym-difference5.xq
+ : @example test/Queries/geo/sym-difference6.xq
+ : @example test/Queries/geo/sym-difference7.xq
+ : @example test/Queries/geo/sym-difference8.xq
+ : @example test/Queries/geo/sym-difference9.xq
 :)
 declare function zorba-geo:sym-difference( $geometry1 as element(),  $geometry2 as element()) as element()? external;
 
@@ -1007,16 +1007,16 @@ declare function zorba-geo:sym-difference( $geometry1 as element(),  $geometry2 
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/area1.xq
- : @example rbkt/Queries/zorba/geo/area2.xq
- : @example rbkt/Queries/zorba/geo/area3.xq
- : @example rbkt/Queries/zorba/geo/area4.xq
- : @example rbkt/Queries/zorba/geo/area5.xq
- : @example rbkt/Queries/zorba/geo/area6.xq
- : @example rbkt/Queries/zorba/geo/area7.xq
- : @example rbkt/Queries/zorba/geo/area8.xq
- : @example rbkt/Queries/zorba/geo/area9.xq
- : @example rbkt/Queries/zorba/geo/area10.xq
+ : @example test/Queries/geo/area1.xq
+ : @example test/Queries/geo/area2.xq
+ : @example test/Queries/geo/area3.xq
+ : @example test/Queries/geo/area4.xq
+ : @example test/Queries/geo/area5.xq
+ : @example test/Queries/geo/area6.xq
+ : @example test/Queries/geo/area7.xq
+ : @example test/Queries/geo/area8.xq
+ : @example test/Queries/geo/area9.xq
+ : @example test/Queries/geo/area10.xq
 :)
 declare function zorba-geo:area( $geometry as element()) as xs:double external;
 
@@ -1031,16 +1031,16 @@ declare function zorba-geo:area( $geometry as element()) as xs:double external;
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/length1.xq
- : @example rbkt/Queries/zorba/geo/length2.xq
- : @example rbkt/Queries/zorba/geo/length3.xq
- : @example rbkt/Queries/zorba/geo/length4.xq
- : @example rbkt/Queries/zorba/geo/length5.xq
- : @example rbkt/Queries/zorba/geo/length6.xq
- : @example rbkt/Queries/zorba/geo/length7.xq
- : @example rbkt/Queries/zorba/geo/length8.xq
- : @example rbkt/Queries/zorba/geo/length9.xq
- : @example rbkt/Queries/zorba/geo/length10.xq
+ : @example test/Queries/geo/length1.xq
+ : @example test/Queries/geo/length2.xq
+ : @example test/Queries/geo/length3.xq
+ : @example test/Queries/geo/length4.xq
+ : @example test/Queries/geo/length5.xq
+ : @example test/Queries/geo/length6.xq
+ : @example test/Queries/geo/length7.xq
+ : @example test/Queries/geo/length8.xq
+ : @example test/Queries/geo/length9.xq
+ : @example test/Queries/geo/length10.xq
 :)
 declare function zorba-geo:length( $geometry as element()) as xs:double external;
 
@@ -1058,15 +1058,15 @@ declare function zorba-geo:length( $geometry as element()) as xs:double external
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:SRSNotIdenticalInBothGeometries
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/is-within-distance1.xq
- : @example rbkt/Queries/zorba/geo/is-within-distance2.xq
- : @example rbkt/Queries/zorba/geo/is-within-distance3.xq
- : @example rbkt/Queries/zorba/geo/is-within-distance4.xq
- : @example rbkt/Queries/zorba/geo/is-within-distance5.xq
- : @example rbkt/Queries/zorba/geo/is-within-distance6.xq
- : @example rbkt/Queries/zorba/geo/is-within-distance7.xq
- : @example rbkt/Queries/zorba/geo/is-within-distance8.xq
- : @example rbkt/Queries/zorba/geo/is-within-distance9.xq
+ : @example test/Queries/geo/is-within-distance1.xq
+ : @example test/Queries/geo/is-within-distance2.xq
+ : @example test/Queries/geo/is-within-distance3.xq
+ : @example test/Queries/geo/is-within-distance4.xq
+ : @example test/Queries/geo/is-within-distance5.xq
+ : @example test/Queries/geo/is-within-distance6.xq
+ : @example test/Queries/geo/is-within-distance7.xq
+ : @example test/Queries/geo/is-within-distance8.xq
+ : @example test/Queries/geo/is-within-distance9.xq
 :)
 declare function zorba-geo:is-within-distance( $geometry1 as element(),  $geometry2 as element(), $distance as xs:double) as xs:boolean external;
 
@@ -1081,16 +1081,16 @@ declare function zorba-geo:is-within-distance( $geometry1 as element(),  $geomet
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/centroid1.xq
- : @example rbkt/Queries/zorba/geo/centroid2.xq
- : @example rbkt/Queries/zorba/geo/centroid3.xq
- : @example rbkt/Queries/zorba/geo/centroid4.xq
- : @example rbkt/Queries/zorba/geo/centroid5.xq
- : @example rbkt/Queries/zorba/geo/centroid6.xq
- : @example rbkt/Queries/zorba/geo/centroid7.xq
- : @example rbkt/Queries/zorba/geo/centroid8.xq
- : @example rbkt/Queries/zorba/geo/centroid9.xq
- : @example rbkt/Queries/zorba/geo/centroid10.xq
+ : @example test/Queries/geo/centroid1.xq
+ : @example test/Queries/geo/centroid2.xq
+ : @example test/Queries/geo/centroid3.xq
+ : @example test/Queries/geo/centroid4.xq
+ : @example test/Queries/geo/centroid5.xq
+ : @example test/Queries/geo/centroid6.xq
+ : @example test/Queries/geo/centroid7.xq
+ : @example test/Queries/geo/centroid8.xq
+ : @example test/Queries/geo/centroid9.xq
+ : @example test/Queries/geo/centroid10.xq
 :)
 declare function zorba-geo:centroid( $geometry as element()) as element(gml:Point) external;
 
@@ -1105,16 +1105,16 @@ declare function zorba-geo:centroid( $geometry as element()) as element(gml:Poin
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/interior-point1.xq
- : @example rbkt/Queries/zorba/geo/interior-point2.xq
- : @example rbkt/Queries/zorba/geo/interior-point3.xq
- : @example rbkt/Queries/zorba/geo/interior-point4.xq
- : @example rbkt/Queries/zorba/geo/interior-point5.xq
- : @example rbkt/Queries/zorba/geo/interior-point6.xq
- : @example rbkt/Queries/zorba/geo/interior-point7.xq
- : @example rbkt/Queries/zorba/geo/interior-point8.xq
- : @example rbkt/Queries/zorba/geo/interior-point9.xq
- : @example rbkt/Queries/zorba/geo/interior-point10.xq
+ : @example test/Queries/geo/interior-point1.xq
+ : @example test/Queries/geo/interior-point2.xq
+ : @example test/Queries/geo/interior-point3.xq
+ : @example test/Queries/geo/interior-point4.xq
+ : @example test/Queries/geo/interior-point5.xq
+ : @example test/Queries/geo/interior-point6.xq
+ : @example test/Queries/geo/interior-point7.xq
+ : @example test/Queries/geo/interior-point8.xq
+ : @example test/Queries/geo/interior-point9.xq
+ : @example test/Queries/geo/interior-point10.xq
 :)
 declare function zorba-geo:point-on-surface( $geometry as element()) as element(gml:Point) external;
 
@@ -1131,8 +1131,8 @@ declare function zorba-geo:point-on-surface( $geometry as element()) as element(
  : @return the X coordinate
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/point_xyz1.xq
- : @example rbkt/Queries/zorba/geo/point_xyz4.xq
+ : @example test/Queries/geo/point_xyz1.xq
+ : @example test/Queries/geo/point_xyz4.xq
 :)
 declare function zorba-geo:x( $point as element(gml:Point)) as xs:double external;
 
@@ -1144,7 +1144,7 @@ declare function zorba-geo:x( $point as element(gml:Point)) as xs:double externa
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
  : @return the Y coordinate
- : @example rbkt/Queries/zorba/geo/point_xyz2.xq
+ : @example test/Queries/geo/point_xyz2.xq
 :)
 declare function zorba-geo:y( $point as element(gml:Point)) as xs:double external;
 
@@ -1156,8 +1156,8 @@ declare function zorba-geo:y( $point as element(gml:Point)) as xs:double externa
  : @return the Z coordinate, or empty sequence if 2D
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/point_xyz3.xq
- : @example rbkt/Queries/zorba/geo/point_xyz5.xq
+ : @example test/Queries/geo/point_xyz3.xq
+ : @example test/Queries/geo/point_xyz5.xq
 :)
 declare function zorba-geo:z( $point as element(gml:Point)) as xs:double? external;
 
@@ -1169,7 +1169,7 @@ declare function zorba-geo:z( $point as element(gml:Point)) as xs:double? extern
  : @param $point node of one of GMLSF objects: gml:Point
  : @return always empty sequence
  : @error geo-err:UnsupportedSRSDimensionValue
- : @example rbkt/Queries/zorba/geo/point_xyz6.xq
+ : @example test/Queries/geo/point_xyz6.xq
 :)
 declare function zorba-geo:m( $point as element(gml:Point)) as xs:double? external;
 
@@ -1188,9 +1188,9 @@ declare function zorba-geo:m( $point as element(gml:Point)) as xs:double? extern
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/start-point1.xq
- : @example rbkt/Queries/zorba/geo/start-point2.xq
- : @example rbkt/Queries/zorba/geo/start-point3.xq
+ : @example test/Queries/geo/start-point1.xq
+ : @example test/Queries/geo/start-point2.xq
+ : @example test/Queries/geo/start-point3.xq
 :)
 declare function zorba-geo:start-point( $line as element()) as element(gml:Point) external;
 
@@ -1203,7 +1203,7 @@ declare function zorba-geo:start-point( $line as element()) as element(gml:Point
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/end-point1.xq
+ : @example test/Queries/geo/end-point1.xq
 :)
 declare function zorba-geo:end-point( $line as element()) as element(gml:Point) external;
 
@@ -1225,12 +1225,12 @@ declare function zorba-geo:end-point( $line as element()) as element(gml:Point) 
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/is-closed1.xq
- : @example rbkt/Queries/zorba/geo/is-closed2.xq
- : @example rbkt/Queries/zorba/geo/is-closed3.xq
- : @example rbkt/Queries/zorba/geo/is-closed4.xq
- : @example rbkt/Queries/zorba/geo/is-closed5.xq
- : @example rbkt/Queries/zorba/geo/is-closed6.xq
+ : @example test/Queries/geo/is-closed1.xq
+ : @example test/Queries/geo/is-closed2.xq
+ : @example test/Queries/geo/is-closed3.xq
+ : @example test/Queries/geo/is-closed4.xq
+ : @example test/Queries/geo/is-closed5.xq
+ : @example test/Queries/geo/is-closed6.xq
 :)
 declare function zorba-geo:is-closed( $geom as element()) as xs:boolean external;
 
@@ -1243,10 +1243,10 @@ declare function zorba-geo:is-closed( $geom as element()) as xs:boolean external
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/is-ring1.xq
- : @example rbkt/Queries/zorba/geo/is-ring2.xq
- : @example rbkt/Queries/zorba/geo/is-ring3.xq
- : @example rbkt/Queries/zorba/geo/is-ring4.xq
+ : @example test/Queries/geo/is-ring1.xq
+ : @example test/Queries/geo/is-ring2.xq
+ : @example test/Queries/geo/is-ring3.xq
+ : @example test/Queries/geo/is-ring4.xq
 :)
 declare function zorba-geo:is-ring( $line as element()) as xs:boolean external;
 
@@ -1260,9 +1260,9 @@ declare function zorba-geo:is-ring( $line as element()) as xs:boolean external;
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/num-points1.xq
- : @example rbkt/Queries/zorba/geo/num-points2.xq
- : @example rbkt/Queries/zorba/geo/num-points3.xq
+ : @example test/Queries/geo/num-points1.xq
+ : @example test/Queries/geo/num-points2.xq
+ : @example test/Queries/geo/num-points3.xq
 :)
 declare function zorba-geo:num-points( $line as element()) as xs:unsignedInt external;
 
@@ -1276,9 +1276,9 @@ declare function zorba-geo:num-points( $line as element()) as xs:unsignedInt ext
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/point-n1.xq
- : @example rbkt/Queries/zorba/geo/point-n2.xq
- : @example rbkt/Queries/zorba/geo/point-n3.xq
+ : @example test/Queries/geo/point-n1.xq
+ : @example test/Queries/geo/point-n2.xq
+ : @example test/Queries/geo/point-n3.xq
 :)
 declare function zorba-geo:point-n( $line as element(), $n as xs:unsignedInt) as element(gml:Point) external;
 
@@ -1296,8 +1296,8 @@ declare function zorba-geo:point-n( $line as element(), $n as xs:unsignedInt) as
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/exterior-ring1.xq
- : @example rbkt/Queries/zorba/geo/exterior-ring2.xq
+ : @example test/Queries/geo/exterior-ring1.xq
+ : @example test/Queries/geo/exterior-ring2.xq
 :)
 declare function zorba-geo:exterior-ring( $polygon as element(gml:Polygon)) as element(gml:LinearRing) external;
 
@@ -1310,7 +1310,7 @@ declare function zorba-geo:exterior-ring( $polygon as element(gml:Polygon)) as e
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/num-interior-ring1.xq
+ : @example test/Queries/geo/num-interior-ring1.xq
 :)
 declare function zorba-geo:num-interior-ring( $polygon as element(gml:Polygon)) as xs:unsignedInt external;
 
@@ -1325,7 +1325,7 @@ declare function zorba-geo:num-interior-ring( $polygon as element(gml:Polygon)) 
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:IndexOutsideRange
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/interior-ring-n1.xq
+ : @example test/Queries/geo/interior-ring-n1.xq
 :)
 declare function zorba-geo:interior-ring-n( $polygon as element(gml:Polygon), $n as xs:unsignedInt) as element(gml:LinearRing) external;
 
@@ -1339,8 +1339,8 @@ declare function zorba-geo:interior-ring-n( $polygon as element(gml:Polygon), $n
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/num-patches1.xq
- : @example rbkt/Queries/zorba/geo/num-patches2.xq
+ : @example test/Queries/geo/num-patches1.xq
+ : @example test/Queries/geo/num-patches2.xq
 :)
 declare function zorba-geo:num-patches($polyhedral-surface as element(gml:Surface)) as xs:integer external;
 
@@ -1358,8 +1358,8 @@ declare function zorba-geo:num-patches($polyhedral-surface as element(gml:Surfac
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:IndexOutsideRange
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/patch-n1.xq
- : @example rbkt/Queries/zorba/geo/patch-n2.xq
+ : @example test/Queries/geo/patch-n1.xq
+ : @example test/Queries/geo/patch-n2.xq
 :)
 declare function zorba-geo:patch-n($polyhedral-surface as element(gml:Surface), 
 																		$n as xs:unsignedInt) as element(gml:PolygonPatch) external;
@@ -1378,9 +1378,9 @@ declare function zorba-geo:patch-n($polyhedral-surface as element(gml:Surface),
  : @error geo-err:UnrecognizedGeoObject
  : @error geo-err:UnsupportedSRSDimensionValue
  : @error geo-err:GEOSError
- : @example rbkt/Queries/zorba/geo/bounding-polygons1.xq
- : @example rbkt/Queries/zorba/geo/bounding-polygons2.xq
- : @example rbkt/Queries/zorba/geo/bounding-polygons3.xq
+ : @example test/Queries/geo/bounding-polygons1.xq
+ : @example test/Queries/geo/bounding-polygons2.xq
+ : @example test/Queries/geo/bounding-polygons3.xq
 :)
 declare function zorba-geo:bounding-polygons($polyhedral-surface as element(gml:Surface), 
 																	 $polygon as element()) as element(gml:PolygonPatch)* external;
