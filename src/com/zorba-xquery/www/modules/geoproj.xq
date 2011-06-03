@@ -50,6 +50,11 @@
 module namespace geoproj = "http://www.zorba-xquery.com/modules/geoproj";
 
 (:~
+ : W3C Math namespace URI.
+:)
+declare namespace math="http://www.w3.org/2005/xpath-functions/math";
+
+(:~
  : Import module for checking if geoproj parameters are validated.
  :)
 import module namespace zorba-schema = "http://www.zorba-xquery.com/modules/schema";
