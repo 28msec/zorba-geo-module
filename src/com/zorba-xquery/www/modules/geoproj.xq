@@ -46,6 +46,7 @@
  : The projection formulas are taken from lib_proj library and implemented in XQuery. 
  :
  : @author Daniel Turcanu
+ : @project geo
  :)
 module namespace geoproj = "http://www.zorba-xquery.com/modules/geoproj";
 

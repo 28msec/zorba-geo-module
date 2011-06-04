@@ -154,6 +154,7 @@
  : @see http://www.opengeospatial.org/standards/gml
  : @see http://trac.osgeo.org/geos/
  : @library <a href="http://trac.osgeo.org/geos/">GEOS (Geometry Engine - Open Source)</a>
+ : @project geo
  :)
 module namespace zorba-geo = "http://expath.org/ns/geo";
 
