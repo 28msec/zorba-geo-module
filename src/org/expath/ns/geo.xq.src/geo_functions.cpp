@@ -135,7 +135,7 @@ enum GeoFunction::gmlsf_types GeoFunction::getGmlSFGeometricType(Item item) cons
     return GMLSF_INVALID;
 }
 
-enum GeoFunction::gmlsf_types GeoFunction::getGeometryNodeType(const StatelessExternalFunction::Arguments_t& args,
+enum GeoFunction::gmlsf_types GeoFunction::getGeometryNodeType(const ExternalFunction::Arguments_t& args,
                                                                int arg_pos, zorba::Item &lItem) const
 {
   Iterator_t args_iter = args[arg_pos]->getIterator();
@@ -2257,7 +2257,7 @@ bool GeoFunction::isSurface(const geos::geom::MultiPolygon *multipolygon,
 
 ///////////////////////////////////////////////////////////////////////
 ItemSequence_t
-SFDimensionFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFDimensionFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -2283,7 +2283,7 @@ SFDimensionFunction::evaluate(const StatelessExternalFunction::Arguments_t& args
 
 ///////////////////////////////////////////////////////////////////////
 ItemSequence_t
-SFCoordinateDimensionFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFCoordinateDimensionFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -2320,7 +2320,7 @@ SFCoordinateDimensionFunction::evaluate(const StatelessExternalFunction::Argumen
 
 ///////////////////////////////////////////////////////////////////////
 ItemSequence_t
-SFGeometryTypeFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFGeometryTypeFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -2381,7 +2381,7 @@ SFGeometryTypeFunction::evaluate(const StatelessExternalFunction::Arguments_t& a
 
 ///////////////////////////////////////////////////////////////////////
 ItemSequence_t
-SFNumGeometriesFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFNumGeometriesFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -2421,7 +2421,7 @@ SFNumGeometriesFunction::evaluate(const StatelessExternalFunction::Arguments_t& 
 }
 
 ItemSequence_t
-SFGeometryNFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFGeometryNFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -2496,7 +2496,7 @@ SFGeometryNFunction::evaluate(const StatelessExternalFunction::Arguments_t& args
 ///////////////////////////////////////////////////////////////////////
 #define DEFINE_EVALUATE_ONE_GEOMETRY_RETURN_GEOMETRY(sfclass_name, geos_function_name)  \
 ItemSequence_t                                                                          \
-sfclass_name::evaluate(const StatelessExternalFunction::Arguments_t& args,              \
+sfclass_name::evaluate(const ExternalFunction::Arguments_t& args,              \
          const StaticContext* aSctxCtx,                                                 \
          const DynamicContext* aDynCtx) const                                           \
 {                                                                                       \
@@ -2622,7 +2622,7 @@ void GeoFunction::getMultiGeometryBoundary(geos::geom::Geometry *geos_geometry,
 }
 
 ItemSequence_t
-SFBoundaryFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFBoundaryFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -2667,7 +2667,7 @@ SFBoundaryFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
 
 ///////////////////////////////////////////////////////////////////////
 ItemSequence_t
-SFSridFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFSridFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -2703,7 +2703,7 @@ SFSridFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
 
 ///////////////////////////////////////////////////////////////////////
 ItemSequence_t
-SFEnvelopeFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFEnvelopeFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -2784,7 +2784,7 @@ SFEnvelopeFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
 
 ///////////////////////////////////////////////////////////////////////
 ItemSequence_t
-SFAsTextFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFAsTextFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -2831,7 +2831,7 @@ unsigned char GeoFunction::hex_to_bin(char hex) const
 }
 ///////////////////////////////////////////////////////////////////////
 ItemSequence_t
-SFAsBinaryFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFAsBinaryFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -2878,7 +2878,7 @@ SFAsBinaryFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
 
 ///////////////////////////////////////////////////////////////////////
 ItemSequence_t
-SFIsEmptyFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFIsEmptyFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -2924,7 +2924,7 @@ SFIsEmptyFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
 
 ///////////////////////////////////////////////////////////////////////
 ItemSequence_t
-SFIsSimpleFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFIsSimpleFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -2974,7 +2974,7 @@ SFIsSimpleFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
 
 ///////////////////////////////////////////////////////////////////////
 ItemSequence_t
-SFIs3DFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFIs3DFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -3013,7 +3013,7 @@ SFIs3DFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
 
 ///////////////////////////////////////////////////////////////////////
 ItemSequence_t
-SFIsMeasuredFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFIsMeasuredFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -3046,7 +3046,7 @@ SFIsMeasuredFunction::evaluate(const StatelessExternalFunction::Arguments_t& arg
 ///////////////////////////////////////////////////////////////////////
 #define DEFINE_EVALUATE_TWO_GEOMETRIES_RETURN_BOOLEAN(sfclass_name, geos_function_name)  \
 ItemSequence_t                                                                    \
-sfclass_name::evaluate(const StatelessExternalFunction::Arguments_t& args,        \
+sfclass_name::evaluate(const ExternalFunction::Arguments_t& args,        \
          const StaticContext* aSctxCtx,                                           \
          const DynamicContext* aDynCtx) const                                     \
 {                                                                                 \
@@ -3135,7 +3135,7 @@ DEFINE_EVALUATE_TWO_GEOMETRIES_RETURN_BOOLEAN(SFOverlapsFunction, overlaps)
 ///////////////////////////////////////////////////////////////////////
 #define DEFINE_EVALUATE_TWO_GEOMETRIES_RETURN_GEOMETRY(sfclass_name, geos_function_name)  \
 ItemSequence_t                                                                    \
-sfclass_name::evaluate(const StatelessExternalFunction::Arguments_t& args,        \
+sfclass_name::evaluate(const ExternalFunction::Arguments_t& args,        \
          const StaticContext* aSctxCtx,                                           \
          const DynamicContext* aDynCtx) const                                     \
 {                                                                                 \
@@ -3226,7 +3226,7 @@ DEFINE_EVALUATE_TWO_GEOMETRIES_RETURN_GEOMETRY(SFSymDifferenceFunction, symDiffe
 ///////////////////////////////////////////////////////////////////////
 #define DEFINE_EVALUATE_ONE_GEOMETRY_RETURN_DOUBLE(sfclass_name, geos_function_name)    \
 ItemSequence_t                                                                          \
-sfclass_name::evaluate(const StatelessExternalFunction::Arguments_t& args,              \
+sfclass_name::evaluate(const ExternalFunction::Arguments_t& args,              \
          const StaticContext* aSctxCtx,                                                 \
          const DynamicContext* aDynCtx) const                                           \
 {                                                                                       \
@@ -3271,7 +3271,7 @@ DEFINE_EVALUATE_ONE_GEOMETRY_RETURN_DOUBLE(SFAreaFunction, getArea)
 DEFINE_EVALUATE_ONE_GEOMETRY_RETURN_DOUBLE(SFLengthFunction, getLength)
 
 ItemSequence_t
-SFRelateFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFRelateFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -3362,7 +3362,7 @@ SFRelateFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
 }
 
 ItemSequence_t
-SFIsWithinDistanceFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFIsWithinDistanceFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -3452,7 +3452,7 @@ SFIsWithinDistanceFunction::evaluate(const StatelessExternalFunction::Arguments_
 }
 
 ItemSequence_t
-SFDistanceFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFDistanceFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -3528,7 +3528,7 @@ SFDistanceFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
 }
 
 ItemSequence_t
-SFBufferFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFBufferFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -3591,7 +3591,7 @@ SFBufferFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
 ///////////////////////////////////////////////////////////////////////
 #define DEFINE_EVALUATE_ONE_POINT_RETURN_DOUBLE(sfclass_name, geos_function_name)       \
 ItemSequence_t                                                                          \
-sfclass_name::evaluate(const StatelessExternalFunction::Arguments_t& args,              \
+sfclass_name::evaluate(const ExternalFunction::Arguments_t& args,              \
          const StaticContext* aSctxCtx,                                                 \
          const DynamicContext* aDynCtx) const                                           \
 {                                                                                       \
@@ -3647,7 +3647,7 @@ DEFINE_EVALUATE_ONE_POINT_RETURN_DOUBLE(SFXFunction, getX)
 DEFINE_EVALUATE_ONE_POINT_RETURN_DOUBLE(SFYFunction, getY)
 
 ItemSequence_t
-SFZFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFZFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -3703,7 +3703,7 @@ SFZFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
 }
 
 ItemSequence_t
-SFMFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFMFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -3744,7 +3744,7 @@ SFMFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
 
 
 ItemSequence_t
-SFStartPointFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFStartPointFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -3796,7 +3796,7 @@ SFStartPointFunction::evaluate(const StatelessExternalFunction::Arguments_t& arg
 }
 
 ItemSequence_t
-SFEndPointFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFEndPointFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -3847,7 +3847,7 @@ SFEndPointFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
 
 ///////////////////////////////////////////////////////////////////////
 ItemSequence_t
-SFIsClosedFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFIsClosedFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -3923,7 +3923,7 @@ SFIsClosedFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
 }
 
 ItemSequence_t
-SFIsRingFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFIsRingFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -3984,7 +3984,7 @@ SFIsRingFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
 }
 
 ItemSequence_t
-SFNumPointsFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFNumPointsFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -4029,7 +4029,7 @@ SFNumPointsFunction::evaluate(const StatelessExternalFunction::Arguments_t& args
 }
 
 ItemSequence_t
-SFPointNFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFPointNFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -4096,7 +4096,7 @@ SFPointNFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
 
 ///////////////////////////////////////////////////////////////////////
 ItemSequence_t
-SFExteriorRingFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFExteriorRingFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -4137,7 +4137,7 @@ SFExteriorRingFunction::evaluate(const StatelessExternalFunction::Arguments_t& a
 }
 
 ItemSequence_t
-SFNumInteriorRingFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFNumInteriorRingFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -4179,7 +4179,7 @@ SFNumInteriorRingFunction::evaluate(const StatelessExternalFunction::Arguments_t
 }
 
 ItemSequence_t
-SFInteriorRingNFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFInteriorRingNFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -4243,7 +4243,7 @@ SFInteriorRingNFunction::evaluate(const StatelessExternalFunction::Arguments_t& 
 }
 
 ItemSequence_t
-SFNumPatchesFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFNumPatchesFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -4285,7 +4285,7 @@ SFNumPatchesFunction::evaluate(const StatelessExternalFunction::Arguments_t& arg
 }
 
 ItemSequence_t
-SFPatchNFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFPatchNFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {
@@ -4350,7 +4350,7 @@ SFPatchNFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
 
 
 ItemSequence_t
-SFBoundingPolygonsFunction::evaluate(const StatelessExternalFunction::Arguments_t& args,
+SFBoundingPolygonsFunction::evaluate(const ExternalFunction::Arguments_t& args,
          const StaticContext* aSctxCtx,
          const DynamicContext* aDynCtx) const
 {

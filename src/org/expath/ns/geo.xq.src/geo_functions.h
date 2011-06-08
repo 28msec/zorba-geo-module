@@ -19,7 +19,7 @@
 
 
 #include <zorba/external_module.h>
-#include <zorba/nonepure_stateless_function.h>
+#include <zorba/function.h>
 #include <zorba/zorba_string.h>
 
 namespace geos{
@@ -37,7 +37,7 @@ namespace zorba { namespace geomodule {
 
   class GeoModule;
 
-  class GeoFunction : public NonePureStatelessExternalFunction
+  class GeoFunction : public ContextualExternalFunction
   {
     protected:
       const GeoModule* theModule;
@@ -117,7 +117,7 @@ namespace zorba { namespace geomodule {
       getURI() const;
 
       enum gmlsf_types getGmlSFGeometricType(Item item) const;
-      enum gmlsf_types getGeometryNodeType(const StatelessExternalFunction::Arguments_t& args, int arg_pos, zorba::Item &lItem) const;
+      enum gmlsf_types getGeometryNodeType(const ExternalFunction::Arguments_t& args, int arg_pos, zorba::Item &lItem) const;
       
       geos::geom::Geometry  *buildGeosGeometryFromItem(zorba::Item &lItem, 
                                                       enum GeoFunction::gmlsf_types geometric_type,
@@ -146,7 +146,7 @@ namespace zorba { namespace geomodule {
       getLocalName() const { return #function_name; }                           \
                                                                                 \
       virtual ItemSequence_t                                                    \
-      evaluate(const StatelessExternalFunction::Arguments_t& args,              \
+      evaluate(const ExternalFunction::Arguments_t& args,              \
                const StaticContext* aSctxCtx,                                   \
                const DynamicContext* aDynCtx) const;                            \
   };
