@@ -68,6 +68,9 @@ import schema namespace geoproj-param = "http://www.zorba-xquery.com/modules/geo
 
 declare namespace gml="http://www.opengis.net/gml";
 
+declare namespace ver = "http://www.zorba-xquery.com/options/versioning";
+declare option ver:module-version "1.0";
+
 (:~
  : Convert angle from degrees to radians. <br/>
  : The parameter is first reduced to value range of (-360, 360).

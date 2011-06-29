@@ -11,5 +11,4 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-  INSTALL(FILES geoproj.xq DESTINATION bin)
-  
+DECLARE_ZORBA_MODULE("http://www.zorba-xquery.com/modules/geo/geoproj" 1.0 "geoproj.xq")
