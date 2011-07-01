@@ -11,4 +11,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-DECLARE_ZORBA_MODULE("http://www.zorba-xquery.com/modules/geo/geoproj" 1.0 "geoproj.xq")
+DECLARE_ZORBA_SCHEMA (FILE geoproj-param.xsd
+  URI "http://www.zorba-xquery.com/modules/geoproj-param")
+DECLARE_ZORBA_MODULE (URI "http://www.zorba-xquery.com/modules/geo/geoproj" VERSION 1.0 FILE "geoproj.xq")

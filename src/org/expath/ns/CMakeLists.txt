@@ -16,7 +16,7 @@ FIND_PACKAGE(Geos)
 
 IF(GEOS_FOUND)
   INCLUDE_DIRECTORIES(${GEOS_INCLUDE_DIR})
-  DECLARE_ZORBA_MODULE("http://expath.org/ns/geo" 1.0 "geo.xq" "${GEOS_LIBRARIES}")
+  DECLARE_ZORBA_MODULE (URI "http://expath.org/ns/geo" VERSION 1.0 FILE "geo.xq" LINK_LIBRARIES "${GEOS_LIBRARIES}")
 ELSE(GEOS_FOUND)
   MESSAGE(STATUS "Geos Library Not Found. You need to install Geos library in order to compile the Geo Module.")
 ENDIF(GEOS_FOUND)
