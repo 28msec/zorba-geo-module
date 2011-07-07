@@ -15,7 +15,7 @@
  */
 #include <string.h>
 #include <stdio.h>
-#include <math.h>
+#include <cmath>
 #include <stdlib.h>
 
 #include "geo_functions.h"
