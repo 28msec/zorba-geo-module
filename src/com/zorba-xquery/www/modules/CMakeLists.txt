@@ -13,4 +13,4 @@
 # limitations under the License.
 DECLARE_ZORBA_SCHEMA (FILE geoproj-param.xsd
   URI "http://www.zorba-xquery.com/modules/geoproj-param")
-DECLARE_ZORBA_MODULE (URI "http://www.zorba-xquery.com/modules/geo/geoproj" VERSION 1.0 FILE "geoproj.xq")
+DECLARE_ZORBA_MODULE (URI "http://www.zorba-xquery.com/modules/geoproj" VERSION 1.0 FILE "geoproj.xq")
