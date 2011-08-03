@@ -158,7 +158,7 @@ xquery version "1.0";
  : @library <a href="http://trac.osgeo.org/geos/">GEOS (Geometry Engine - Open Source)</a>
  : @project geo
  :)
-module namespace zorba-geo = "http://expath.org/ns/geo";
+module namespace geo = "http://expath.org/ns/geo";
 
 (:~
  : Declare the namespace for the gml geometry objects.
@@ -176,37 +176,37 @@ declare option ver:module-version "1.0";
 (:~
  : Errors namespace URI.
 :)
-declare variable $zorba-geo:errNS as xs:string := "http://expath.org/ns/error";
+declare variable $geo:errNS as xs:string := "http://expath.org/ns/error";
 
 (:~
  : Error code for Unrecognized geometric object, or geometry is of improper type, or geometry object is malformed.<br/>
 :)
-declare variable $zorba-geo:UnrecognizedGeoObject as xs:QName := fn:QName($zorba-geo:errNS, "geo-err:UnrecognizedGeoObject");
+declare variable $geo:UnrecognizedGeoObject as xs:QName := fn:QName($geo:errNS, "geo-err:UnrecognizedGeoObject");
 
 (:~
  : Error code for Geo module's supported values for srsDimension in GML are 2 and 3.<br/>
 :)
-declare variable $zorba-geo:UnsupportedSRSDimensionValue as xs:QName := fn:QName($zorba-geo:errNS, "geo-err:UnsupportedSRSDimensionValue");
+declare variable $geo:UnsupportedSRSDimensionValue as xs:QName := fn:QName($geo:errNS, "geo-err:UnsupportedSRSDimensionValue");
 
 (:~
  : Error code for SRS Name is not the same in the two geometries.<br/>
 :)
-declare variable $zorba-geo:SRSNotIdenticalInBothGeometries as xs:QName := fn:QName($zorba-geo:errNS, "geo-err:SRSNotIdenticalInBothGeometries");
+declare variable $geo:SRSNotIdenticalInBothGeometries as xs:QName := fn:QName($geo:errNS, "geo-err:SRSNotIdenticalInBothGeometries");
 
 (:~
  : Error code for Index n is outside the range of geometries in collection.<br/>
 :)
-declare variable $zorba-geo:IndexOutsideRange as xs:QName := fn:QName($zorba-geo:errNS, "geo-err:IndexOutsideRange");
+declare variable $geo:IndexOutsideRange as xs:QName := fn:QName($geo:errNS, "geo-err:IndexOutsideRange");
 
 (:~
  : Error code for Errors originated in GEOS library.<br/>
 :)
-declare variable $zorba-geo:GEOSError as xs:QName := fn:QName($zorba-geo:errNS, "geo-err:GEOSError");
+declare variable $geo:GEOSError as xs:QName := fn:QName($geo:errNS, "geo-err:GEOSError");
 
 (:~
  : Error code for Errors originated in geo module, that should never occur.<br/>
 :)
-declare variable $zorba-geo:InternalError as xs:QName := fn:QName($zorba-geo:errNS, "geo-err:InternalError");
+declare variable $geo:InternalError as xs:QName := fn:QName($geo:errNS, "geo-err:InternalError");
 
 (:~
  : Return the dimension of the geo object. 
@@ -226,7 +226,7 @@ declare variable $zorba-geo:InternalError as xs:QName := fn:QName($zorba-geo:err
  : @example test/Queries/geo/dimension9.xq
  : @example test/Queries/geo/dimension10.xq
 :)
-declare function zorba-geo:dimension( $geometry as element()) as xs:integer external;
+declare function geo:dimension( $geometry as element()) as xs:integer external;
 
 (:~
  : Return the coordinate dimension of the geo object, as specified in the srsDimension attribute.<br/>
@@ -245,7 +245,7 @@ declare function zorba-geo:dimension( $geometry as element()) as xs:integer exte
  : @example test/Queries/geo/coordinate_dimension5.xq
  : @example test/Queries/geo/coordinate_dimension6.xq
 :)
-declare function zorba-geo:coordinate-dimension( $geometry as element()) as xs:integer external;
+declare function geo:coordinate-dimension( $geometry as element()) as xs:integer external;
 
 (:~
  : Return the qname type of geo object. <br/>
@@ -270,7 +270,7 @@ declare function zorba-geo:coordinate-dimension( $geometry as element()) as xs:i
  : @example test/Queries/geo/geometry_type10.xq
  : @example test/Queries/geo/geometry_type11.xq
 :)
-declare function zorba-geo:geometry-type( $geometry as element()) as xs:QName? external;
+declare function geo:geometry-type( $geometry as element()) as xs:QName? external;
 
 (:~
  : Return the srid URI of geo object. 
@@ -290,7 +290,7 @@ declare function zorba-geo:geometry-type( $geometry as element()) as xs:QName? e
  : @example test/Queries/geo/srid4.xq
  : @example test/Queries/geo/srid5.xq
 :)
-declare function zorba-geo:srid( $geometry as element()) as xs:anyURI? external;
+declare function geo:srid( $geometry as element()) as xs:anyURI? external;
 
 (:~
  : Return the number of geometries in the collection, or 1 for non-collection. 
@@ -307,7 +307,7 @@ declare function zorba-geo:srid( $geometry as element()) as xs:anyURI? external;
  : @example test/Queries/geo/num-geometries2.xq
  : @example test/Queries/geo/num-geometries3.xq
 :)
-declare function zorba-geo:num-geometries( $geometry as element()) as xs:unsignedInt external;
+declare function geo:num-geometries( $geometry as element()) as xs:unsignedInt external;
 
 (:~
  : Return the n-th geometry in the collection. 
@@ -327,7 +327,7 @@ declare function zorba-geo:num-geometries( $geometry as element()) as xs:unsigne
  : @example test/Queries/geo/geometry-n3.xq
  : @example test/Queries/geo/geometry-n4.xq
 :)
-declare function zorba-geo:geometry-n( $geometry as element(), $n as xs:unsignedInt) as element() external;
+declare function geo:geometry-n( $geometry as element(), $n as xs:unsignedInt) as element() external;
 
 (:~
  : The envelope is the minimum bounding box of this geometry.
@@ -354,7 +354,7 @@ declare function zorba-geo:geometry-n( $geometry as element(), $n as xs:unsigned
  : @example test/Queries/geo/envelope11.xq
  : @example test/Queries/geo/envelope12.xq
 :)
-declare function zorba-geo:envelope( $geometry as element()) as element(gml:Envelope) external;
+declare function geo:envelope( $geometry as element()) as element(gml:Envelope) external;
 
 (:~
  : Return the Well-known Text Representation of Geometry. <br/>
@@ -378,7 +378,7 @@ declare function zorba-geo:envelope( $geometry as element()) as element(gml:Enve
  : @example test/Queries/geo/as_text8.xq
  : @example test/Queries/geo/as_text9.xq
 :)
-declare function zorba-geo:as-text( $geometry as element()) as xs:string external;
+declare function geo:as-text( $geometry as element()) as xs:string external;
 
 (:~
  : Return the Well-known Binary Representation of Geometry. <br/>
@@ -394,7 +394,7 @@ declare function zorba-geo:as-text( $geometry as element()) as xs:string externa
  : @error geo-err:GEOSError
  : @example test/Queries/geo/as_binary1.xq
 :)
-declare function zorba-geo:as-binary( $geometry as element()) as xs:base64Binary external;
+declare function geo:as-binary( $geometry as element()) as xs:base64Binary external;
 
 (:~
  : Checks if the argument is empty or not and if it is a valid geometry or not. <br/>
@@ -411,7 +411,7 @@ declare function zorba-geo:as-binary( $geometry as element()) as xs:base64Binary
  : @example test/Queries/geo/is_empty4.xq
  : @example test/Queries/geo/is_empty5.xq
 :)
-declare function zorba-geo:is-empty( $geometry as element()?) as xs:boolean external;
+declare function geo:is-empty( $geometry as element()?) as xs:boolean external;
 
 (:~
  : Checks if this geometric object has no anomalous geometric points, such
@@ -439,7 +439,7 @@ declare function zorba-geo:is-empty( $geometry as element()?) as xs:boolean exte
  : @example test/Queries/geo/is_simple13.xq
  : @example test/Queries/geo/is_simple14.xq
 :)
-declare function zorba-geo:is-simple( $geometry as element()) as xs:boolean external;
+declare function geo:is-simple( $geometry as element()) as xs:boolean external;
 
 (:~
  : Checks if this geometric object is 2D or 3D, as specified in srsDimension optional attribute.<br/>
@@ -454,7 +454,7 @@ declare function zorba-geo:is-simple( $geometry as element()) as xs:boolean exte
  : @example test/Queries/geo/is_3D1.xq
  : @example test/Queries/geo/is_3D2.xq
 :)
-declare function zorba-geo:is-3d( $geometry as element()) as xs:boolean external;
+declare function geo:is-3d( $geometry as element()) as xs:boolean external;
 
 (:~
  : Checks if this geometric object has measurements.<br/>
@@ -467,7 +467,7 @@ declare function zorba-geo:is-3d( $geometry as element()) as xs:boolean external
  : @error geo-err:UnrecognizedGeoObject
  : @example test/Queries/geo/is_measured1.xq
 :)
-declare function zorba-geo:is-measured( $geometry as element()) as xs:boolean external;
+declare function geo:is-measured( $geometry as element()) as xs:boolean external;
 
 (:~
  : A boundary is a set that represents the limit of an geometry.<br/>
@@ -504,7 +504,7 @@ declare function zorba-geo:is-measured( $geometry as element()) as xs:boolean ex
  : @example test/Queries/geo/boundary13.xq
  : @example test/Queries/geo/boundary14.xq
 :)
-declare function zorba-geo:boundary( $geometry as element()) as element()* external;
+declare function geo:boundary( $geometry as element()) as element()* external;
 
 
 
@@ -534,7 +534,7 @@ declare function zorba-geo:boundary( $geometry as element()) as element()* exter
  : @example test/Queries/geo/equals8.xq
  : @example test/Queries/geo/equals9.xq
 :)
-declare function zorba-geo:equals( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
+declare function geo:equals( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
 
 (:~
  : Checks if geometry1 covers geometry2.<br/>
@@ -556,7 +556,7 @@ declare function zorba-geo:equals( $geometry1 as element(),  $geometry2 as eleme
  : @error geo-err:GEOSError
  : @example test/Queries/geo/covers6.xq
 :)
-declare function zorba-geo:covers( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
+declare function geo:covers( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
 
 (:~
  : Checks if geometry1 does not touch or intersects geometry2.<br/>
@@ -585,7 +585,7 @@ declare function zorba-geo:covers( $geometry1 as element(),  $geometry2 as eleme
  : @example test/Queries/geo/disjoint8.xq
  : @example test/Queries/geo/disjoint9.xq
 :)
-declare function zorba-geo:disjoint( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
+declare function geo:disjoint( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
 
 (:~
  : Checks if geometry1 intersects geometry2.<br/>
@@ -612,7 +612,7 @@ declare function zorba-geo:disjoint( $geometry1 as element(),  $geometry2 as ele
  : @example test/Queries/geo/intersects8.xq
  : @example test/Queries/geo/intersects9.xq
 :)
-declare function zorba-geo:intersects( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
+declare function geo:intersects( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
 
 (:~
  : Checks if geometry1 touches geometry2.<br/>
@@ -639,7 +639,7 @@ declare function zorba-geo:intersects( $geometry1 as element(),  $geometry2 as e
  : @example test/Queries/geo/touches8.xq
  : @example test/Queries/geo/touches9.xq
 :)
-declare function zorba-geo:touches( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
+declare function geo:touches( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
 
 (:~
  : Checks if geometry1 crosses geometry2.<br/>
@@ -673,7 +673,7 @@ declare function zorba-geo:touches( $geometry1 as element(),  $geometry2 as elem
  : @example test/Queries/geo/crosses9.xq
  : @example test/Queries/geo/crosses10.xq
 :)
-declare function zorba-geo:crosses( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
+declare function geo:crosses( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
 
 (:~
  : Checks if geometry1 is within geometry2.<br/>
@@ -700,7 +700,7 @@ declare function zorba-geo:crosses( $geometry1 as element(),  $geometry2 as elem
  : @example test/Queries/geo/within8.xq
  : @example test/Queries/geo/within9.xq
 :)
-declare function zorba-geo:within( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
+declare function geo:within( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
 
 (:~
  : Checks if geometry1 contains geometry2.<br/>
@@ -727,7 +727,7 @@ declare function zorba-geo:within( $geometry1 as element(),  $geometry2 as eleme
  : @example test/Queries/geo/contains9.xq
  : @example test/Queries/geo/contains10.xq
 :)
-declare function zorba-geo:contains( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
+declare function geo:contains( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
 
 (:~
  : Checks if geometry1 overlaps with geometry2.<br/>
@@ -758,7 +758,7 @@ declare function zorba-geo:contains( $geometry1 as element(),  $geometry2 as ele
  : @example test/Queries/geo/overlaps11.xq
  : @example test/Queries/geo/overlaps12.xq
 :)
-declare function zorba-geo:overlaps( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
+declare function geo:overlaps( $geometry1 as element(),  $geometry2 as element()) as xs:boolean external;
 
 (:~
  : Checks if geometry1 relates with geometry2 relative to a DE-9IM matrix.<br/>
@@ -814,7 +814,7 @@ declare function zorba-geo:overlaps( $geometry1 as element(),  $geometry2 as ele
  : @example test/Queries/geo/relate3.xq
  : @example test/Queries/geo/relate4.xq
 :)
-declare function zorba-geo:relate( $geometry1 as element(),  $geometry2 as element(), $intersection_matrix as xs:string) as xs:boolean external;
+declare function geo:relate( $geometry1 as element(),  $geometry2 as element(), $intersection_matrix as xs:string) as xs:boolean external;
 
 
 
@@ -834,7 +834,7 @@ declare function zorba-geo:relate( $geometry1 as element(),  $geometry2 as eleme
  : @error geo-err:GEOSError
  : @example test/Queries/geo/distance1.xq
 :)
-declare function zorba-geo:distance( $geometry1 as element(),  $geometry2 as element()) as xs:double external;
+declare function geo:distance( $geometry1 as element(),  $geometry2 as element()) as xs:double external;
 
 (:~
  : Returns a polygon that represents all Points whose distance
@@ -859,7 +859,7 @@ declare function zorba-geo:distance( $geometry1 as element(),  $geometry2 as ele
  : @example test/Queries/geo/buffer9.xq
  : @example test/Queries/geo/buffer10.xq
 :)
-declare function zorba-geo:buffer( $geometry as element(),  $distance as xs:double) as element() external;
+declare function geo:buffer( $geometry as element(),  $distance as xs:double) as element() external;
 
 (:~
  : Returns the smallest convex Polygon that contains all the points in the Geometry.<br/>
@@ -884,7 +884,7 @@ declare function zorba-geo:buffer( $geometry as element(),  $distance as xs:doub
  : @example test/Queries/geo/convex-hull9.xq
  : @example test/Queries/geo/convex-hull10.xq
 :)
-declare function zorba-geo:convex-hull( $geometry as element()) as element() external;
+declare function geo:convex-hull( $geometry as element()) as element() external;
 
 (:~
  : Returns a geometric object that represents the Point set intersection of
@@ -914,7 +914,7 @@ declare function zorba-geo:convex-hull( $geometry as element()) as element() ext
  : @example test/Queries/geo/intersection9.xq
  : @example test/Queries/geo/intersection10.xq
 :)
-declare function zorba-geo:intersection( $geometry1 as element(),  $geometry2 as element()) as element()? external;
+declare function geo:intersection( $geometry1 as element(),  $geometry2 as element()) as element()? external;
 
 (:~
  : Returns a geometric object that represents the Point set union of
@@ -941,7 +941,7 @@ declare function zorba-geo:intersection( $geometry1 as element(),  $geometry2 as
  : @example test/Queries/geo/union8.xq
  : @example test/Queries/geo/union9.xq
 :)
-declare function zorba-geo:union( $geometry1 as element(),  $geometry2 as element()) as element() external;
+declare function geo:union( $geometry1 as element(),  $geometry2 as element()) as element() external;
 
 (:~
  : Returns a geometric object that represents the Point set difference of
@@ -969,7 +969,7 @@ declare function zorba-geo:union( $geometry1 as element(),  $geometry2 as elemen
  : @example test/Queries/geo/difference9.xq
  : @example test/Queries/geo/difference10.xq
 :)
-declare function zorba-geo:difference( $geometry1 as element(),  $geometry2 as element()) as element()? external;
+declare function geo:difference( $geometry1 as element(),  $geometry2 as element()) as element()? external;
 
 (:~
  : Returns a geometric object that represents the Point set symmetric difference of
@@ -997,7 +997,7 @@ declare function zorba-geo:difference( $geometry1 as element(),  $geometry2 as e
  : @example test/Queries/geo/sym-difference8.xq
  : @example test/Queries/geo/sym-difference9.xq
 :)
-declare function zorba-geo:sym-difference( $geometry1 as element(),  $geometry2 as element()) as element()? external;
+declare function geo:sym-difference( $geometry1 as element(),  $geometry2 as element()) as element()? external;
 
 
 
@@ -1024,7 +1024,7 @@ declare function zorba-geo:sym-difference( $geometry1 as element(),  $geometry2 
  : @example test/Queries/geo/area9.xq
  : @example test/Queries/geo/area10.xq
 :)
-declare function zorba-geo:area( $geometry as element()) as xs:double external;
+declare function geo:area( $geometry as element()) as xs:double external;
 
 (:~
  : Returns the length of the lines of this geometry.<br/>
@@ -1048,7 +1048,7 @@ declare function zorba-geo:area( $geometry as element()) as xs:double external;
  : @example test/Queries/geo/length9.xq
  : @example test/Queries/geo/length10.xq
 :)
-declare function zorba-geo:length( $geometry as element()) as xs:double external;
+declare function geo:length( $geometry as element()) as xs:double external;
 
 (:~
  : Checks if geometry2 is within a certain distance of geometry1.<br/>
@@ -1074,7 +1074,7 @@ declare function zorba-geo:length( $geometry as element()) as xs:double external
  : @example test/Queries/geo/is-within-distance8.xq
  : @example test/Queries/geo/is-within-distance9.xq
 :)
-declare function zorba-geo:is-within-distance( $geometry1 as element(),  $geometry2 as element(), $distance as xs:double) as xs:boolean external;
+declare function geo:is-within-distance( $geometry1 as element(),  $geometry2 as element(), $distance as xs:double) as xs:boolean external;
 
 (:~
  : Returns a Point that is the mathematical centroid of this geometry.
@@ -1098,7 +1098,7 @@ declare function zorba-geo:is-within-distance( $geometry1 as element(),  $geomet
  : @example test/Queries/geo/centroid9.xq
  : @example test/Queries/geo/centroid10.xq
 :)
-declare function zorba-geo:centroid( $geometry as element()) as element(gml:Point) external;
+declare function geo:centroid( $geometry as element()) as element(gml:Point) external;
 
 (:~
  : Returns a Point that is interior of this geometry.
@@ -1122,7 +1122,7 @@ declare function zorba-geo:centroid( $geometry as element()) as element(gml:Poin
  : @example test/Queries/geo/interior-point9.xq
  : @example test/Queries/geo/interior-point10.xq
 :)
-declare function zorba-geo:point-on-surface( $geometry as element()) as element(gml:Point) external;
+declare function geo:point-on-surface( $geometry as element()) as element(gml:Point) external;
 
 
 
@@ -1140,7 +1140,7 @@ declare function zorba-geo:point-on-surface( $geometry as element()) as element(
  : @example test/Queries/geo/point_xyz1.xq
  : @example test/Queries/geo/point_xyz4.xq
 :)
-declare function zorba-geo:x( $point as element(gml:Point)) as xs:double external;
+declare function geo:x( $point as element(gml:Point)) as xs:double external;
 
 (:~
  : Returns the Y coordinate of a Point.
@@ -1152,7 +1152,7 @@ declare function zorba-geo:x( $point as element(gml:Point)) as xs:double externa
  : @return the Y coordinate
  : @example test/Queries/geo/point_xyz2.xq
 :)
-declare function zorba-geo:y( $point as element(gml:Point)) as xs:double external;
+declare function geo:y( $point as element(gml:Point)) as xs:double external;
 
 (:~
  : Returns the Z coordinate of a Point, if is 3D.
@@ -1165,7 +1165,7 @@ declare function zorba-geo:y( $point as element(gml:Point)) as xs:double externa
  : @example test/Queries/geo/point_xyz3.xq
  : @example test/Queries/geo/point_xyz5.xq
 :)
-declare function zorba-geo:z( $point as element(gml:Point)) as xs:double? external;
+declare function geo:z( $point as element(gml:Point)) as xs:double? external;
 
 (:~
  : Should return the Measure of a Point, but is not implemented, 
@@ -1177,7 +1177,7 @@ declare function zorba-geo:z( $point as element(gml:Point)) as xs:double? extern
  : @error geo-err:UnsupportedSRSDimensionValue
  : @example test/Queries/geo/point_xyz6.xq
 :)
-declare function zorba-geo:m( $point as element(gml:Point)) as xs:double? external;
+declare function geo:m( $point as element(gml:Point)) as xs:double? external;
 
 
 
@@ -1198,7 +1198,7 @@ declare function zorba-geo:m( $point as element(gml:Point)) as xs:double? extern
  : @example test/Queries/geo/start-point2.xq
  : @example test/Queries/geo/start-point3.xq
 :)
-declare function zorba-geo:start-point( $line as element()) as element(gml:Point) external;
+declare function geo:start-point( $line as element()) as element(gml:Point) external;
 
 (:~
  : Returns the end Point of a line.
@@ -1211,7 +1211,7 @@ declare function zorba-geo:start-point( $line as element()) as element(gml:Point
  : @error geo-err:GEOSError
  : @example test/Queries/geo/end-point1.xq
 :)
-declare function zorba-geo:end-point( $line as element()) as element(gml:Point) external;
+declare function geo:end-point( $line as element()) as element(gml:Point) external;
 
 (:~
  : Checks if the line is closed loop. That is, if the start Point is same with end Point.
@@ -1238,7 +1238,7 @@ declare function zorba-geo:end-point( $line as element()) as element(gml:Point) 
  : @example test/Queries/geo/is-closed5.xq
  : @example test/Queries/geo/is-closed6.xq
 :)
-declare function zorba-geo:is-closed( $geom as element()) as xs:boolean external;
+declare function geo:is-closed( $geom as element()) as xs:boolean external;
 
 (:~
  : Checks if the line is a ring. That is, if the line is closed and simple.
@@ -1254,7 +1254,7 @@ declare function zorba-geo:is-closed( $geom as element()) as xs:boolean external
  : @example test/Queries/geo/is-ring3.xq
  : @example test/Queries/geo/is-ring4.xq
 :)
-declare function zorba-geo:is-ring( $line as element()) as xs:boolean external;
+declare function geo:is-ring( $line as element()) as xs:boolean external;
 
 (:~
  : Return the number of Points in a line.
@@ -1270,7 +1270,7 @@ declare function zorba-geo:is-ring( $line as element()) as xs:boolean external;
  : @example test/Queries/geo/num-points2.xq
  : @example test/Queries/geo/num-points3.xq
 :)
-declare function zorba-geo:num-points( $line as element()) as xs:unsignedInt external;
+declare function geo:num-points( $line as element()) as xs:unsignedInt external;
 
 (:~
  : Return the n-th Point in a line.
@@ -1286,7 +1286,7 @@ declare function zorba-geo:num-points( $line as element()) as xs:unsignedInt ext
  : @example test/Queries/geo/point-n2.xq
  : @example test/Queries/geo/point-n3.xq
 :)
-declare function zorba-geo:point-n( $line as element(), $n as xs:unsignedInt) as element(gml:Point) external;
+declare function geo:point-n( $line as element(), $n as xs:unsignedInt) as element(gml:Point) external;
 
 
 
@@ -1305,7 +1305,7 @@ declare function zorba-geo:point-n( $line as element(), $n as xs:unsignedInt) as
  : @example test/Queries/geo/exterior-ring1.xq
  : @example test/Queries/geo/exterior-ring2.xq
 :)
-declare function zorba-geo:exterior-ring( $polygon as element(gml:Polygon)) as element(gml:LinearRing) external;
+declare function geo:exterior-ring( $polygon as element(gml:Polygon)) as element(gml:LinearRing) external;
 
 (:~
  : Return the number of interior rings of a Polygon.
@@ -1318,7 +1318,7 @@ declare function zorba-geo:exterior-ring( $polygon as element(gml:Polygon)) as e
  : @error geo-err:GEOSError
  : @example test/Queries/geo/num-interior-ring1.xq
 :)
-declare function zorba-geo:num-interior-ring( $polygon as element(gml:Polygon)) as xs:unsignedInt external;
+declare function geo:num-interior-ring( $polygon as element(gml:Polygon)) as xs:unsignedInt external;
 
 (:~
  : Return the n-th interior ring of a Polygon.
@@ -1333,7 +1333,7 @@ declare function zorba-geo:num-interior-ring( $polygon as element(gml:Polygon)) 
  : @error geo-err:GEOSError
  : @example test/Queries/geo/interior-ring-n1.xq
 :)
-declare function zorba-geo:interior-ring-n( $polygon as element(gml:Polygon), $n as xs:unsignedInt) as element(gml:LinearRing) external;
+declare function geo:interior-ring-n( $polygon as element(gml:Polygon), $n as xs:unsignedInt) as element(gml:LinearRing) external;
 
 (:~
  : Return the number of surface patches inside a gml:Surface.<br/>
@@ -1348,7 +1348,7 @@ declare function zorba-geo:interior-ring-n( $polygon as element(gml:Polygon), $n
  : @example test/Queries/geo/num-patches1.xq
  : @example test/Queries/geo/num-patches2.xq
 :)
-declare function zorba-geo:num-patches($polyhedral-surface as element(gml:Surface)) as xs:integer external;
+declare function geo:num-patches($polyhedral-surface as element(gml:Surface)) as xs:integer external;
 
 (:~
  : Return the n-th Surface patch of a Surface.<br/>
@@ -1367,7 +1367,7 @@ declare function zorba-geo:num-patches($polyhedral-surface as element(gml:Surfac
  : @example test/Queries/geo/patch-n1.xq
  : @example test/Queries/geo/patch-n2.xq
 :)
-declare function zorba-geo:patch-n($polyhedral-surface as element(gml:Surface), 
+declare function geo:patch-n($polyhedral-surface as element(gml:Surface),
 																		$n as xs:unsignedInt) as element(gml:PolygonPatch) external;
 
 
@@ -1388,5 +1388,5 @@ declare function zorba-geo:patch-n($polyhedral-surface as element(gml:Surface),
  : @example test/Queries/geo/bounding-polygons2.xq
  : @example test/Queries/geo/bounding-polygons3.xq
 :)
-declare function zorba-geo:bounding-polygons($polyhedral-surface as element(gml:Surface), 
+declare function geo:bounding-polygons($polyhedral-surface as element(gml:Surface),
 																	 $polygon as element()) as element(gml:PolygonPatch)* external;

@@ -60,7 +60,7 @@ declare namespace math="http://www.w3.org/2005/xpath-functions/math";
 (:~
  : Import module for checking if geoproj parameters are validated.
  :)
-import module namespace zorba-schema = "http://www.zorba-xquery.com/modules/schema";
+import module namespace schemaOptions = "http://www.zorba-xquery.com/modules/schema";
 
 
 (:~
