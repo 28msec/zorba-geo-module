@@ -57,6 +57,8 @@ module namespace geoproj = "http://www.zorba-xquery.com/modules/geoproj";
 :)
 declare namespace math="http://www.w3.org/2005/xpath-functions/math";
 
+declare namespace err = "http://www.w3.org/2005/xqt-errors";
+
 (:~
  : Import module for checking if geoproj parameters are validated.
  :)
@@ -186,7 +188,12 @@ declare %private function geoproj:wgs84-to-omerc-validated(
  :        At equator, the distance for 1 degree is aproximately 110 km.
  : @param $lat_long_degrees a sequence of nodes of type <br/>
  :   &lt;latlong&gt;&lt;lat&gt;<i>latitude degree</i>&lt;/lat&gt;&lt;long&gt;<i>longitude degree</i>&lt;/long&gt;&lt;/latlong&gt;<br/>
- :   in namespace "http://www.zorba-xquery.com/modules/geoproj-param"
+ :   in namespace "http://www.zorba-xquery.com/modules/geoproj-param". Each node in the sequence is validated
+ :   against the according schema.
+ :
+ : @error err:XQDY0027 if any of the nodes passed in the $lat-long-degress parameter is
+ :  not valid according to the schema.
+ :
  : @return a sequence of x-y coordinates in format <br/>
  :   &lt;coord&gt;&lt;x&gt;<i>x</i>&lt;/x&gt;&lt;y&gt;<i>y</i>&lt;/y&gt;&lt;/coord&gt; <br/>
  :   in namespace "http://www.zorba-xquery.com/modules/geoproj-param" <br/>
@@ -229,7 +236,12 @@ declare function geoproj:wgs84-to-omerc( $lat-0 as xs:double,
  : @param $k0 is the scale in the center point. 
  : @param $lat_long_degrees a sequence of nodes of type <br/>
  :   &lt;latlong&gt;&lt;lat&gt;<i>latitude degree</i>&lt;/lat&gt;&lt;long&gt;<i>longitude degree</i>&lt;/long&gt;&lt;/latlong&gt;<br/>
- :   in namespace "http://www.zorba-xquery.com/modules/geoproj-param"
+ :   in namespace "http://www.zorba-xquery.com/modules/geoproj-param". Each node in this sequence is validated according
+ :   to the according schema.
+ :
+ : @error err:XQDY0027 if any of the nodes passed in the $lat-long-degress parameter is
+ :  not valid according to the schema.
+ :
  : @return a sequence of x-y coordinates in format <br/>
  :   &lt;gml:pos&gt;<i>x</i> <i>y</i>&lt;/gml:pos&gt; <br/>
  :   in namespace "http://www.opengis.net/gml"
@@ -313,6 +325,10 @@ declare %private function geoproj:proj-phi2($ts as xs:double, $e as xs:double) a
  :   &lt;coord&gt;&lt;x&gt;<i>x</i>&lt;/x&gt;&lt;y&gt;<i>y</i>&lt;/y&gt;&lt;/coord&gt; <br/>
  :   in namespace "http://www.zorba-xquery.com/modules/geoproj-param"<br/>
  :   The coordinates are expressed in meters.
+ :
+ : @error err:XQDY0027 if any of the coordinates passed in the $coords parameter is
+ :  not valid according to the schema.
+ : 
  : @return a sequence of geographic coordinates in format <br/>
  :   &lt;latlong&gt;&lt;lat&gt;<i>latitude degree</i>&lt;/lat&gt;&lt;long&gt;<i>longitude degree</i>&lt;/long&gt;&lt;/latlong&gt;<br/>
  :   in namespace "http://www.zorba-xquery.com/modules/geoproj-param"<br/>

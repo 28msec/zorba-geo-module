@@ -173,40 +173,6 @@ declare namespace geo-err="http://expath.org/ns/error";
 declare namespace ver = "http://www.zorba-xquery.com/options/versioning";
 declare option ver:module-version "1.0";
 
-(:~
- : Errors namespace URI.
-:)
-declare variable $geo:errNS as xs:string := "http://expath.org/ns/error";
-
-(:~
- : Error code for Unrecognized geometric object, or geometry is of improper type, or geometry object is malformed.<br/>
-:)
-declare variable $geo:UnrecognizedGeoObject as xs:QName := fn:QName($geo:errNS, "geo-err:UnrecognizedGeoObject");
-
-(:~
- : Error code for Geo module's supported values for srsDimension in GML are 2 and 3.<br/>
-:)
-declare variable $geo:UnsupportedSRSDimensionValue as xs:QName := fn:QName($geo:errNS, "geo-err:UnsupportedSRSDimensionValue");
-
-(:~
- : Error code for SRS Name is not the same in the two geometries.<br/>
-:)
-declare variable $geo:SRSNotIdenticalInBothGeometries as xs:QName := fn:QName($geo:errNS, "geo-err:SRSNotIdenticalInBothGeometries");
-
-(:~
- : Error code for Index n is outside the range of geometries in collection.<br/>
-:)
-declare variable $geo:IndexOutsideRange as xs:QName := fn:QName($geo:errNS, "geo-err:IndexOutsideRange");
-
-(:~
- : Error code for Errors originated in GEOS library.<br/>
-:)
-declare variable $geo:GEOSError as xs:QName := fn:QName($geo:errNS, "geo-err:GEOSError");
-
-(:~
- : Error code for Errors originated in geo module, that should never occur.<br/>
-:)
-declare variable $geo:InternalError as xs:QName := fn:QName($geo:errNS, "geo-err:InternalError");
 
 (:~
  : Return the dimension of the geo object. 
