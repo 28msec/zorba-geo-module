@@ -27,7 +27,7 @@
 #
 # See the FindLibTidy.cmake module shipped with Zorba for more information.
 
-FIND_PACKAGE_WIN32(GEOS GEOS_FOUND GEOS)
+FIND_PACKAGE_WIN32(NAME GEOS FOUND_VAR GEOS_FOUND SEARCH_NAMES GEOS)
 
 IF(GEOS_FOUND)
 
