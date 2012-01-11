@@ -677,7 +677,7 @@ geos::geom::Geometry  *GeoFunction::buildGeosGeometryFromItem(zorba::Item &lItem
         Item  item_type;
         zorba::Item   null_parent;
         item_name = theModule->getItemFactory()->createQName("http://www.opengis.net/gml", "gml", "Point");
-        std::vector<std::pair<String, String> >   ns_binding;
+        NsBindings ns_binding;
         ns_binding.push_back(std::pair<String, String>("gml", "http://www.opengis.net/gml"));
         item_type = theModule->getItemFactory()->createQName("http://www.w3.org/2001/XMLSchema", "untyped");
         *result_item = theModule->getItemFactory()->createElementNode(null_parent, item_name, item_type, false, false, ns_binding);
@@ -878,7 +878,7 @@ geos::geom::Geometry  *GeoFunction::buildGeosGeometryFromItem(zorba::Item &lItem
         Item  item_type;
         zorba::Item   null_parent;
         item_name = theModule->getItemFactory()->createQName("http://www.opengis.net/gml", "gml", "Point");
-        std::vector<std::pair<String, String> >   ns_binding;
+        NsBindings ns_binding;
         ns_binding.push_back(std::pair<String, String>("gml", "http://www.opengis.net/gml"));
         item_type = theModule->getItemFactory()->createQName("http://www.w3.org/2001/XMLSchema", "untyped");
         *result_item = theModule->getItemFactory()->createElementNode(null_parent, item_name, item_type, false, false, ns_binding);
@@ -1532,7 +1532,7 @@ zorba::Item GeoFunction::getGMLItemFromGeosGeometry(zorba::Item &parent,
   zorba::Item   result_item;
   zorba::Item   item_name;
   zorba::Item   item_type;
-  std::vector<std::pair<String, String> >   ns_binding;
+  NsBindings ns_binding;
   ns_binding.push_back(std::pair<String, String>("gml", "http://www.opengis.net/gml"));
   item_type = theModule->getItemFactory()->createQName("http://www.w3.org/2001/XMLSchema", "untyped");
 
@@ -2747,7 +2747,7 @@ SFEnvelopeFunction::evaluate(const ExternalFunction::Arguments_t& args,
   zorba::Item   item_name;
   zorba::Item   item_type;
   zorba::Item   null_parent;
-  std::vector<std::pair<String, String> >   ns_binding;
+  zorba::NsBindings ns_binding;
   char strtemp[100];
   ns_binding.push_back(std::pair<String, String>("gml", "http://www.opengis.net/gml"));
   item_type = theModule->getItemFactory()->createQName("http://www.w3.org/2001/XMLSchema", "untyped");
