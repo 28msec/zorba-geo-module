@@ -26,7 +26,7 @@ IF (GEOS_INCLUDE_DIR)
 ENDIF (GEOS_INCLUDE_DIR)
 
 # Look for the header file.
-FIND_PATH(GEOS_INCLUDE_DIR geos.h PATHS "/usr/local/include/geos/") 
+FIND_PATH(GEOS_INCLUDE_DIR geos/geos.h PATHS "/usr/local/include/geos/") 
 MARK_AS_ADVANCED(GEOS_INCLUDE_DIR)
 
 # Look for the library.
