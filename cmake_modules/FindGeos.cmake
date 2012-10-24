@@ -25,13 +25,14 @@ IF (GEOS_INCLUDE_DIR)
   SET(GEOS_FIND_QUIETLY TRUE)
 ENDIF (GEOS_INCLUDE_DIR)
 
-# Look for the header file.
-FIND_PATH(GEOS_INCLUDE_DIR geos/geos.h PATHS "/usr/local/include/geos/") 
+# Look for the header file. geos.h seems to be located in a few places,
+# so use version.h.
+FIND_PATH(GEOS_INCLUDE_DIR geos/version.h) 
 MARK_AS_ADVANCED(GEOS_INCLUDE_DIR)
 
 # Look for the library.
 # FIND_LIBRARY(GEOS_LIBRARY NAMES geos PATHS ${GEOS_LIBRARIES})
-FIND_LIBRARY(GEOS_LIBRARY NAMES geos PATHS "/usr/local/lib/")
+FIND_LIBRARY(GEOS_LIBRARY NAMES geos)
 MARK_AS_ADVANCED(GEOS_LIBRARY)
 
 # INCLUDE(FindPackageHandleStandardArgs)
