@@ -30,6 +30,7 @@ ELSE (ZORBA_SUPPRESS_GEOS)
     INCLUDE_DIRECTORIES("geo.xq.src")   
     DECLARE_ZORBA_MODULE (URI "http://expath.org/ns/geo" VERSION 1.0 FILE "geo.xq" LINK_LIBRARIES "${GEOS_LIBRARIES}")
     
+    ADD_TEST_DIRECTORY("${PROJECT_SOURCE_DIR}/test")    
   ELSE(GEOS_FOUND)
     MESSAGE(STATUS "Geos Library Not Found. You need to install Geos library in order to compile the Geo Module.")
   ENDIF(GEOS_FOUND)
