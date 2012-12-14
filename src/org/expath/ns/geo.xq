@@ -27,75 +27,69 @@ xquery version "1.0";
  : Possible GMLSF geometric structures are:
  : <dl>
  :  <dt><b>Point</b></dt>
- :  <pre class="brush: xml;">&lt;gml:Point [srsDimension='2|3']?&gt;
- :    &#160;&#160;&lt;gml:pos [srsDimension='2|3']?&gt;double_x double_y &lt;/gml:pos&gt;
- :  &lt;/gml:Point&gt;</pre>
+ :  <pre class="ace-static" ace-mode="xquery"><![CDATA[<gml:Point [srsDimension='2|3']?>
+ :    <gml:pos [srsDimension='2|3']?>double_x double_y </gml:pos>
+ :  </gml:Point>]]></pre>
  :  <dt><b>LineString</b></dt>
- :  <pre class="brush: xml;">&lt;gml:LineString [srsDimension='2|3']?&gt;
- :    &#160;&#160;&lt;gml:posList [srsDimension='2|3']?&gt; double_x1 double_y1 double_x2 double_y2 ... &lt;/gml:posList&gt;
- :    &lt;/gml:LineString&gt;</pre>
+ :  <pre class="ace-static" ace-mode="xquery"><![CDATA[<gml:LineString [srsDimension='2|3']?>
+ :    <gml:posList [srsDimension='2|3']?> double_x1 double_y1 double_x2 double_y2 ... </gml:posList>
+ :  </gml:LineString>]]></pre>
  :  <dt><b>Curve</b></dt>
- :  <pre class="brush: xml;">&lt;gml:Curve [srsDimension='2|3']?&gt;
- :    &lt;gml:segments&gt;
- :    [&lt;gml:LineStringSegment interpolation="linear" [srsDimension='2|3']?&gt;
- :     &#160;&#160;&lt;gml:posList [srsDimension='2|3']?&gt; double_x1 double_y1 double_x2 double_y2 ... &lt;/gml:posList&gt;
- :     &lt;gml:LineStringSegment&gt;]*
- :    &lt;/gml:segments&gt;
- :    &lt;/gml:Curve&gt;
- :   </pre>
+ :  <pre class="ace-static" ace-mode="xquery"><![CDATA[<gml:Curve [srsDimension='2|3']?>
+ :    <gml:segments>
+ :    [<gml:LineStringSegment interpolation="linear" [srsDimension='2|3']?>
+ :       <gml:posList [srsDimension='2|3']?> double_x1 double_y1 double_x2 double_y2 ... </gml:posList>;
+ :     <gml:LineStringSegment>]*
+ :    </gml:segments>
+ :  </gml:Curve>]]></pre>
  :  <dt><b>LinearRing</b></dt>
- :  <pre class="brush: xml;">&lt;gml:LinearRing [srsDimension='2|3']?&gt;
- :   &#160;&#160;&lt;gml:posList [srsDimension='2|3']?&gt; double_x1 double_y1 double_x2 double_y2 ... &lt;/gml:posList&gt;
- :   &lt;/gml:LinearRing&gt;</pre>
+ :  <pre class="ace-static" ace-mode="xquery"><![CDATA[<gml:LinearRing [srsDimension='2|3']?>
+ :    <gml:posList [srsDimension='2|3']?> double_x1 double_y1 double_x2 double_y2 ... </gml:posList>
+ :  </gml:LinearRing>]]></pre>
  :  <dt><b>Surface</b></dt>
- :  <pre class="brush: xml;">&lt;gml:Surface [srsDimension='2|3']?&gt;
- :    &lt;gml:patches&gt;
- :    [&lt;gml:PolygonPatch [srsDimension='2|3']?&gt;
- :     &#160;&#160;&lt;gml:exterior&gt;
- :     &#160;&#160;&#160;&#160;&lt;gml:LinearRing&gt; ... &lt;/gml:LinearRing&gt;
- :     &#160;&#160;&lt;/gml:exterior&gt;
- :     &#160;&#160;[&lt;gml:interior&gt;
- :     &#160;&#160;&#160;&#160;&lt;gml:LinearRing&gt; ... &lt;/gml:LinearRing&gt;
- :     &#160;&#160;&lt;/gml:interior&gt;]*
- :     &lt;/gml:PolygonPatch&gt;]*
- :    &lt;/gml:patches&gt;
- :    &lt;/gml:Surface&gt;
- :  </pre>
+ :  <pre class="ace-static" ace-mode="xquery"><![CDATA[<gml:Surface [srsDimension='2|3']?>
+ :    <gml:patches>
+ :    [<gml:PolygonPatch [srsDimension='2|3']?>
+ :       <gml:exterior>
+ :         <gml:LinearRing> ... </gml:LinearRing>
+ :       </gml:exterior>
+ :       <gml:interior>
+ :         <gml:LinearRing> ... </gml:LinearRing>
+ :       </gml:interior>]*
+ :     </gml:PolygonPatch>]*
+ :    </gml:patches>
+ :  </gml:Surface>]]></pre>
  :  <dt><b>Polygon</b></dt>
- :  <pre class="brush: xml;">&lt;gml:Polygon [srsDimension='2|3']?&gt;
- :     &#160;&#160;&lt;gml:exterior&gt;
- :     &#160;&#160;&#160;&#160;&lt;gml:LinearRing&gt; ... &lt;/gml:LinearRing&gt;
- :     &#160;&#160;&lt;/gml:exterior&gt;
- :     &#160;&#160;[&lt;gml:interior&gt;
- :     &#160;&#160;&#160;&#160;&lt;gml:LinearRing&gt; ... &lt;/gml:LinearRing&gt;
- :     &#160;&#160;&lt;/gml:interior&gt;]*
- :    &lt;/gml:Polygon&gt;
- :  </pre>
+ :  <pre class="ace-static" ace-mode="xquery"><![CDATA[<gml:Polygon [srsDimension='2|3']?>
+ :    <gml:exterior>
+ :      <gml:LinearRing> ... </gml:LinearRing>
+ :    </gml:exterior>
+ :    [<gml:interior>
+ :       <gml:LinearRing> ... </gml:LinearRing>
+ :     </gml:interior>]*
+ :  </gml:Polygon>]]></pre>
  :  <dt><b>MultiPoint</b></dt>
- :  <pre class="brush: xml;">&lt;gml:MultiPoint [srsDimension='2|3']?&gt;
- :     &#160;&#160;[&lt;gml:Point&gt; ... &lt;/gml:Point&gt;]*
- :    &lt;/gml:MultiPoint&gt;
- :  </pre>
+ :  <pre class="ace-static" ace-mode="xquery"><![CDATA[<gml:MultiPoint [srsDimension='2|3']?>
+ :    [<gml:Point> ... </gml:Point>]*
+ :  </gml:MultiPoint>]]></pre>
  :  <dt><b>MultiCurve</b></dt>
- :  <pre class="brush: xml;">&lt;gml:MultiCurve [srsDimension='2|3']?&gt;
- :     &#160;&#160;[&lt;gml:LineString&gt; ... &lt;/gml:LineString&gt;]*
- :    &lt;/gml:MultiCurve&gt;
- :  </pre>
+ :  <pre class="ace-static" ace-mode="xquery"><![CDATA[<gml:MultiCurve [srsDimension='2|3']?>
+ :    [<gml:LineString> ... </gml:LineString>]*
+ :  </gml:MultiCurve>]]></pre>
  :  <dt><b>MultiSurface</b></dt>
- :  <pre class="brush: xml;">&lt;gml:MultiSurface [srsDimension='2|3']?&gt;
- :     &#160;&#160;[&lt;gml:Polygon&gt; ... &lt;/gml:Polygon&gt;]*
- :    &lt;/gml:MultiSurface&gt;
- :  </pre>
+ :  <pre class="ace-static" ace-mode="xquery"><![CDATA[<gml:MultiSurface [srsDimension='2|3']?>
+ :    [<gml:Polygon> ... </gml:Polygon>]*
+ :  </gml:MultiSurface>
+ :  ]]></pre>
  :  <dt><b>MultiGeometry (this is from GML 3 schema)</b></dt>
- :  <pre class="brush: xml;">&lt;gml:MultiGeometry [srsDimension='2|3']?&gt;
- :     &#160;&#160;[&lt;gml:geometryMember&gt;
- :          &#160;&#160;&#160;&#160; ...one geometry...
- :     &#160;&#160;&lt;/gml:geometryMember&gt;]*
- :     &#160;&#160;[&lt;gml:geometryMembers&gt;
- :          &#160;&#160;&#160;&#160; ...a list of geometries...
- :     &#160;&#160;&lt;/gml:geometryMembers&gt;]?
- :    &lt;/gml:MultiGeometry&gt;
- :  </pre>
+ :  <pre class="ace-static" ace-mode="xquery"><![CDATA[<gml:MultiGeometry [srsDimension='2|3']?>
+ :     [<gml:geometryMember>
+ :          ...one geometry...
+ :     </gml:geometryMember>]*
+ :    [<gml:geometryMembers>
+ :      ...a list of geometries...
+ :    </gml:geometryMembers>]?
+ :  </gml:MultiGeometry>]]></pre>
  : </dl><br/><br/>
  : Note: When using gml:posList, it is possible to replace this element with a list of gml:pos.<br/>
  : Note: XLink referencing is not supported.<br/>
@@ -156,7 +150,7 @@ xquery version "1.0";
  : @see http://www.opengeospatial.org/standards/gml
  : @see http://trac.osgeo.org/geos/
  : @library <a href="http://trac.osgeo.org/geos/">GEOS (Geometry Engine - Open Source)</a>
- : @project geo
+ : @project EXPath/Geo
  :)
 module namespace geo = "http://expath.org/ns/geo";
 
