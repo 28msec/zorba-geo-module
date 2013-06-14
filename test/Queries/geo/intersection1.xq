@@ -4,7 +4,7 @@ Compute the intersection between a group of lines and a point on one line.
 Result: 3.000000 3.000000
 :)
 
-import module namespace geo = "http://expath.org/ns/geo";
+import module namespace geo = "http://zorba.io/modules/geo";
 declare namespace gml="http://www.opengis.net/gml";
 
 geo:intersection(<gml:Curve><gml:segments>

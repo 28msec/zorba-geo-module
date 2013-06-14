@@ -47,7 +47,7 @@ public:
   virtual ~GeoModule();
   
   virtual String
-  getURI() const { return "http://expath.org/ns/geo"; }
+  getURI() const { return "http://zorba.io/modules/geo"; }
   
   virtual ExternalFunction*
   getExternalFunction(const String& aLocalname);

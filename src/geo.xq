@@ -152,7 +152,7 @@ xquery version "1.0";
  : @library <a href="http://trac.osgeo.org/geos/">GEOS (Geometry Engine - Open Source)</a>
  : @project EXPath/Geo
  :)
-module namespace geo = "http://expath.org/ns/geo";
+module namespace geo = "http://zorba.io/modules/geo";
 
 (:~
  : Declare the namespace for the gml geometry objects.
