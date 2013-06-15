@@ -150,7 +150,7 @@ xquery version "1.0";
  : @see http://www.opengeospatial.org/standards/gml
  : @see http://trac.osgeo.org/geos/
  : @library <a href="http://trac.osgeo.org/geos/">GEOS (Geometry Engine - Open Source)</a>
- : @project EXPath/Geo
+ : @project EXPath/EXPath Geo Module
  :)
 module namespace geo = "http://expath.org/ns/geo";
 
