@@ -4,7 +4,7 @@ Tests if two lines are equal, even if one line contains a duplicate point.
 Result: true
 :)
 
-import module namespace geo = "http://expath.org/ns/geo";
+import module namespace geo = "http://zorba.io/modules/geo";
 declare namespace gml="http://www.opengis.net/gml";
 
 geo:equals(<gml:LineString>

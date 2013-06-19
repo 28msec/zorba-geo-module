@@ -1,4 +1,4 @@
-import module namespace geo = "http://expath.org/ns/geo";
+import module namespace geo = "http://zorba.io/modules/geo";
 declare namespace gml="http://www.opengis.net/gml";
 declare namespace top10nl="http://www.kadaster.nl/top10nl";
 
