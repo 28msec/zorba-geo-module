@@ -2870,7 +2870,11 @@ SFAsBinaryFunction::evaluate(const ExternalFunction::Arguments_t& args,
     binary_bin[i] = ((hex_to_bin(hex_str[i*2]) << 4) | hex_to_bin(hex_str[i*2+1]));
   }
 
-  zorba::Item base64_item = theModule->getItemFactory()->createBase64Binary(binary_bin, binary_len);
+  zorba::Item base64_item(
+    theModule->getItemFactory()->createBase64Binary(
+      reinterpret_cast<char const*>(binary_bin), binary_len, false
+    )
+  );
   delete[] binary_bin;
 
   return ItemSequence_t(new SingletonItemSequence(base64_item));
@@ -4504,4 +4508,6 @@ SFBoundingPolygonsFunction::evaluate(const ExternalFunction::Arguments_t& args,
 }
 
 
-} /* namespace geomodule */ } /* namespace zorba */
+} /* namespace geomodule */
+} /* namespace zorba */
+/* vim:set et sw=2 ts=2: */
