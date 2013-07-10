@@ -137,10 +137,6 @@ xquery version "1.0";
  :  <p>- * means any result.</p>
  :  <p>- 0, 1, 2 gives the expected dimension of the result (point, curve, surface)</p>
  :  <p/>
- :  <p>How to build geo module:</p>
- :  <p>- You need GEOS library from here http://trac.osgeo.org/geos/ . Make sure it is version 3.2.2, or better 3.3.0 or above.</p>
- :  <p>- After installing or compiling GEOS, on Windows you need to set the cmake variables GEOS_INCLUDE_DIR and GEOS_LIBRARY.</p>
- :  <p>On Linux the variables are set automatically by cmake.</p>
  : 
  : @author Daniel Turcanu
  :
@@ -151,7 +147,7 @@ xquery version "1.0";
  : @library <a href="http://trac.osgeo.org/geos/">GEOS (Geometry Engine - Open Source)</a>
  : @project EXPath/EXPath Geo Module
  :)
-module namespace geo = "http://zorba.io/modules/geo";
+module namespace geo = "http://expath.org/ns/geo";
 
 (:~
  : <p>Declare the namespace for the gml geometry objects.</p>

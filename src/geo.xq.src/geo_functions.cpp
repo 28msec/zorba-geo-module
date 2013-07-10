@@ -60,7 +60,7 @@
 #include "geo_module.h"
 
  #if GEOS_VERSION_MAJOR < 3 || (GEOS_VERSION_MAJOR == 3 && GEOS_VERSION_MINOR < 2) || \
-  (GEOS_VERSION_MAJOR == 3 && GEOS_VERSION_MINOR == 2 && GEOS_VERSION_PATCH < 2)
+  (GEOS_VERSION_MAJOR == 3 && GEOS_VERSION_MINOR == 2)
 #error Zorba geo module can be linked only with GEOS version 3.2.2 or above, preferably 3.3
 #endif
 
