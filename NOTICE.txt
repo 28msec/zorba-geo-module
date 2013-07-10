@@ -1,0 +1,6 @@
+How to build geo module:
+
+- You need GEOS library from here http://trac.osgeo.org/geos/ . Make sure it is version 3.2.2, or better 3.3.0 or above.
+- After installing or compiling GEOS, on Windows you need to set the cmake variables GEOS_INCLUDE_DIR and GEOS_LIBRARY.
+
+note: On Linux the variables are set automatically by cmake.
