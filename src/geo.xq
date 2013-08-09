@@ -159,7 +159,7 @@ declare namespace gml="http://www.opengis.net/gml";
  :)
 declare namespace geo-err="http://expath.org/ns/error";
 
-declare namespace ver = "http://www.zorba-xquery.com/options/versioning";
+declare namespace ver = "http://zorba.io/options/versioning";
 declare option ver:module-version "1.0";
 
 
